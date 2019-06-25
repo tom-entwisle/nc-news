@@ -35,7 +35,7 @@ exports.sendMultipleArticles = (req, res, next) => {
   const queries = req.query;
   fetchSeveralArticals(queries)
     .then(articles => {
-      console.log(articles);
+      // console.log(articles);
       if (articles.length === 0)
         res.status(404).send({
           status: 404,

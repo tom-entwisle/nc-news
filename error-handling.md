@@ -46,8 +46,8 @@ For each thing that could go wrong, make a test with your expected status code a
 ### GET `/api/articles`
 
 - Bad queries:
-  - `sort_by` a column that doesn't exist
-  - `order` !== "asc" / "desc"
+  - `sort_by` a column that doesn't exist -- Handled with 405
+  - `order` !== "asc" / "desc" -- Handled with 405
   - `author` / `topic` that is not in the database
   - `author` / `topic` that exists but does not have any articles associated with it
 

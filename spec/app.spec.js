@@ -22,7 +22,7 @@ describe("/", () => {
   });
 
   describe("/api/doesnotexist", () => {
-    it("GET status:404 Route Not Found error handler works correctly", () => {
+    it("GET status:404 'Route Not Found' error handler works correctly", () => {
       return request(app)
         .get("/api/doesnotexist")
         .expect(404)
@@ -59,6 +59,18 @@ describe("/", () => {
             "avatar_url",
             "name"
           ]);
+        });
+    });
+  });
+
+  describe("/api/users/:badusername", () => {
+    it("GET status:404 and to send a 404 error object if the username does not exist", () => {
+      return request(app)
+        .get("/api/users/notarealperson")
+        .expect(404)
+        .then(res => {
+          let testUser = JSON.parse(res.text);
+          expect(testUser).to.contain.keys(["status", "msg"]);
         });
     });
   });

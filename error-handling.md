@@ -28,7 +28,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>be-nc-news/README.md at master · northcoders/be-nc-news</title>
+  <title>be-nc-news/error-handling.md at master · northcoders/be-nc-news</title>
     <meta name="description" content="Contribute to northcoders/be-nc-news development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -38,10 +38,10 @@
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/16081355?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="northcoders/be-nc-news" /><meta property="og:url" content="https://github.com/northcoders/be-nc-news" /><meta property="og:description" content="Contribute to northcoders/be-nc-news development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.githubassets.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzkxNjYzMjAwOjU1YjFhZGMzMGU4MDE3YjYxZmRlZmFlZTZhYjk3NDhkY2ZmYWQ2YzNjYTM2MTA2NDhlNmY0ZmE5ZWEzODEyNWI=--5e82c3916bb7e92a936a550b1f915114fa2c95f9">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzkxNjYzMjAwOjYzYTY4ZDEzMWY0YzAxOTI3NWRlYTZjMjA3Y2U4ZDBiZGFhOGIzMmUwN2IwYzQ5ZWNjMjMzNTQ4OTNhMDVkYmY=--000b1aa01be512d123952fd74a74eac08c44de89">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="D792:25D36:8DD5FDB:D943058:5D11D95C" data-pjax-transient>
+  <meta name="request-id" content="D792:25D36:8DD4DF8:D941BEF:5D11D94E" data-pjax-transient>
 
 
   
@@ -52,7 +52,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="D792:25D36:8DD5FDB:D943058:5D11D95C" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="49308371" /><meta name="octolytics-actor-login" content="tom-entwisle" /><meta name="octolytics-actor-hash" content="26dc90d892a067c66d7d60d1d4b19bab560b3a79ceb0e827701c15a549fe9f6a" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="D792:25D36:8DD4DF8:D941BEF:5D11D94E" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="49308371" /><meta name="octolytics-actor-login" content="tom-entwisle" /><meta name="octolytics-actor-hash" content="26dc90d892a067c66d7d60d1d4b19bab560b3a79ceb0e827701c15a549fe9f6a" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -71,7 +71,7 @@
     <meta name="user-login" content="tom-entwisle">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="ZWU5MDg2Y2I2YWEyMjcyZGFiMGJkN2E2Y2E0OGFhZmM0NDc0Y2NhNWU1MTY4NDcxNzQ2NzA5MDcyNjFlNTA0NXx7InJlbW90ZV9hZGRyZXNzIjoiMTg1LjIwNS4xNzIuNCIsInJlcXVlc3RfaWQiOiJENzkyOjI1RDM2OjhERDVGREI6RDk0MzA1ODo1RDExRDk1QyIsInRpbWVzdGFtcCI6MTU2MTQ1MDg2MiwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+    <meta name="js-proxy-site-detection-payload" content="MGQyY2M0MjdhMWJkZGM5ZmEwMTBmNDcwNzFmOGY2YzNkNmVkODMxYzIzYWQ2OTg4NmJiMzk4ZjBhNzg1YzliOXx7InJlbW90ZV9hZGRyZXNzIjoiMTg1LjIwNS4xNzIuNCIsInJlcXVlc3RfaWQiOiJENzkyOjI1RDM2OjhERDRERjg6RDk0MUJFRjo1RDExRDk0RSIsInRpbWVzdGFtcCI6MTU2MTQ1MDg0MywiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
     <meta name="enabled-features" content="UNIVERSE_BANNER,MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PULL_PANDA_HOMEPAGE,NOTIFY_ON_BLOCK,RELATED_ISSUES,DISPLAY_COMMENTER_FULL_NAME">
 
@@ -80,14 +80,14 @@
   <meta http-equiv="x-pjax-version" content="30845261ef0c717a1fee02722bd26de1">
   
 
-      <link href="https://github.com/northcoders/be-nc-news/commits/master.atom?token=ALYGFU436E474XQLRSQRPDV3D4M72" rel="alternate" title="Recent Commits to be-nc-news:master" type="application/atom+xml">
+      <link href="https://github.com/northcoders/be-nc-news/commits/master.atom?token=ALYGFU46ULWUABMHBUV57Q53D4M6W" rel="alternate" title="Recent Commits to be-nc-news:master" type="application/atom+xml">
 
   <meta name="go-import" content="github.com/northcoders/be-nc-news git https://github.com/northcoders/be-nc-news.git">
 
   <meta name="octolytics-dimension-user_id" content="16081355" /><meta name="octolytics-dimension-user_login" content="northcoders" /><meta name="octolytics-dimension-repository_id" content="158201319" /><meta name="octolytics-dimension-repository_nwo" content="northcoders/be-nc-news" /><meta name="octolytics-dimension-repository_public" content="false" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="158201319" /><meta name="octolytics-dimension-repository_network_root_nwo" content="northcoders/be-nc-news" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/northcoders/be-nc-news/blob/master/README.md" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/northcoders/be-nc-news/blob/master/error-handling.md" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -158,7 +158,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search or jump to…"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=1Q3XUwqvVKD06tbJU5zS7NT8/WoDqTD4ju7MITNtpiDd8vLhpC/+vCcI8sNBnxpZnVz2VYvwdeUme4eNlAiD/g=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=F7ZqkOX/JC92JruHNHggyQFYDCGWixCF74Y/IOSRrOwfSU8iS3+OM6XEn40me+h8SPgHHh7SVZhHE3SMQ/SJMg=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -309,7 +309,7 @@
       <img class="avatar" src="https://avatars1.githubusercontent.com/u/49308371?s=40&amp;v=4" width="20" height="20" alt="@tom-entwisle" />
       tom-entwisle
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="kCapHWyaCEsLsUiwMcnvYT7nDpBngGqwCIF5ZMp19RuOI4Qq/1XBnyIlZGwUu5g+WtKH7suEqBc3BZBJGbYdzA==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="+IBBJhhKHjqO/EHEbBj/Saw9Px9QU8qofW1738flpivmhWwRi4XX7qdobRhJaogWyAi2YfxXCA9C6ZLyFCZO/A==" />
       <button type="submit" class="Header-link mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15 d-lg-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
         <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"/></svg>
         Sign out
@@ -403,7 +403,7 @@
     border
   " data-team-hovercards-enabled>
   <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
-    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit " aria-haspopup="dialog" role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:16081355,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:49308371,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD5FDB:D943058:5D11D95C&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;}}" data-hydro-click-hmac="a549b5d3ac537685ff1e1e431995c3b47813351aa12ea2b4d848aa4ddb96d84e">
+    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit " aria-haspopup="dialog" role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:16081355,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:49308371,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD4DF8:D941BEF:5D11D94E&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/error-handling.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;}}" data-hydro-click-hmac="65fb9cb6a16735c8f24ae3a1cbe86e9c3e242197dd8857e8d6930ba6e6f5fa18">
       <div class="d-flex">
         <div class="f6 lh-condensed user-status-header
           d-inline-block v-align-middle
@@ -429,7 +429,7 @@
         </div>
       </div>
 </summary>    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="r7ABCMSCv3/gqscaAgBvQCTpWf37bJA3ixqH4ycyKAhA66J1+6avnR6PM/LenEsIoy+bAOThuwRt7J4gVuEtwA==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="r6GMXsVEhL4A55BGZNgmyvhwxSbU75qFki7hz7sS8f9A+i8j+mCUXP7CZK64RAKCf7YH28tisbZ02PgMysH0Nw==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
@@ -549,17 +549,17 @@
       </li>
       <li class="dropdown-divider" role="none"></li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2019-06-25T09:51:02+01:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2019-06-25T09:50:43+01:00">
             in 30 minutes
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2019-06-25T10:21:02+01:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2019-06-25T10:20:43+01:00">
             in 1 hour
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2019-06-25T13:21:02+01:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2019-06-25T13:20:43+01:00">
             in 4 hours
           </button>
         </li>
@@ -608,7 +608,7 @@
     <div role="none" class="dropdown-divider"></div>
     <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
     <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="5ugFQam+bbJURZ6FbcvUywbyNTac/t0tI5FRaT14GyX47Sh2OnGkZn3RsllIuaOUYse8SDD6H4ocFbhE7rvz8g==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="iVYnZAzraQpYPuAall5O+Y0k39MgjyMQbOTcp7db2ziXUwpTnySg3nGqzMazLDmm6RFWrYyL4bdTYDWKZJgz7w==" />
       
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
         Sign out
@@ -658,10 +658,10 @@
 
   <li>
     
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="0n+Xsypj+yEFy/qhtyek+6EMQFfsUhxIA/9iobNhGnyDWV0cEum0qUCRVxFV859s22KNAiWG7Kpzz2ZmVSKhWg==" />      <input type="hidden" name="repository_id" value="158201319">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="StNjaYsTUTjor1Qer4a7LEwPrEilzu8eYzTvUD1ElnUb9anGs5kesK31+a5NUoC7NmFhHWwaH/wTBOuX2wctUw==" />      <input type="hidden" name="repository_id" value="158201319">
 
       <details class="details-reset details-overlay select-menu float-left">
-        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD5FDB:D943058:5D11D95C&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="6bcdb62237702618126104f63f15a4de303ac38294ff7bcd1c4fe57dabe2eaae" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD4DF8:D941BEF:5D11D94E&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/error-handling.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="75e0843b87fce7d1b6ee19b66329bd77846abdb5e195d497b542c7215a0ccc6c" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
               <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
               Watch
           </span>
@@ -732,18 +732,18 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/northcoders/be-nc-news/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="wyo6JXFh7QD58zNWjNa7D/ZAyhKjOWCmx1Yy0KveVeP2cbKfvMfq2NNMJsw4mXUq2zJshIZvzbGbUsAjtrjbtQ==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/northcoders/be-nc-news/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="F+688kZ+on8SzlMh2kafU75RKJxPbwx4jSCKxsCy/TIitTRIi9ilpzhxRrtuCVF2kyOOCmo5oW/RJHg13dRzZA==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar northcoders/be-nc-news" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD5FDB:D943058:5D11D95C&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="bb3a9044b67a040627143e65c69233293a2a22e22a3f24edaec4d76a215962d2" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar northcoders/be-nc-news" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD4DF8:D941BEF:5D11D94E&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/error-handling.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="01f61970646224decdeef2a809df9f889ad4f6ea41756df7fc665498043b5793" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Unstar
 </button>        <a class="social-count js-social-count" href="/northcoders/be-nc-news/stargazers"
            aria-label="0 users starred this repository">
           0
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/northcoders/be-nc-news/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="4sEJYO0Ea3sSpl55g6ZRCT1WU1wQnMnywhX3hFaRCb+40RebpX5wRpyG/uCD+qwReYuV7RmVB/27PQp30jdJLw==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/northcoders/be-nc-news/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="lDgz56II5MSoSG5UQL7KjvjcBkJ4cqqpEuI4D1zNG4nOKC0c6nL/+SZozs1A4jeWvAHA83F7ZKZrysX82GtbGQ==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star northcoders/be-nc-news" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD5FDB:D943058:5D11D95C&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="69ed6872588f25b906c46c41dd1b67b527a0bbd8b605ce1ee060d139c03492c5" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star northcoders/be-nc-news" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD4DF8:D941BEF:5D11D94E&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/error-handling.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="f2b5bbffd2ec8e34613dbe7bac868ff5671a3fdae56609a0bab8e270674bfe4c" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Star
 </button>        <a class="social-count js-social-count" href="/northcoders/be-nc-news/stargazers"
            aria-label="0 users starred this repository">
@@ -755,7 +755,7 @@
 
   <li>
           <details class="details-reset details-overlay details-overlay-dark d-inline-block float-left">
-            <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD5FDB:D943058:5D11D95C&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/README.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="5720363bd602b8298030d1b85a3bcd59ae81ec82392eb1ac77c3e05684d3d75d" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" title="Fork your own copy of northcoders/be-nc-news to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+            <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD4DF8:D941BEF:5D11D94E&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/error-handling.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="e0210b2d12ed5b2adc3acbc6a247b8151c5475bdff167ac693a25be42e629e81" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" title="Fork your own copy of northcoders/be-nc-news to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
               Fork
 </summary>            <details-dialog
               class="anim-fade-in fast Box Box--overlay d-flex flex-column"
@@ -904,9 +904,9 @@
 
 
   
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/northcoders/be-nc-news/blob/2d89f36991af190899358ad3dc1de6cef5e3d659/README.md">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/northcoders/be-nc-news/blob/2d89f36991af190899358ad3dc1de6cef5e3d659/error-handling.md">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v21:4a4276db65fe6ce38b866683431f31ba -->
+    <!-- blob contrib key: blob_contributors:v21:23377a65d9912302e52cba1d976f6d76 -->
       
 
     <div class="d-flex flex-items-start flex-shrink-0 mb-2 flex-column flex-md-row">
@@ -921,7 +921,7 @@
     <span class="css-truncate-target">master</span>
   </summary>
 
-  <details-menu class="select-menu-modal hx_rsm-modal position-absolute" style="z-index: 99;" src="/northcoders/be-nc-news/ref-list/master/README.md?source_action=show&amp;source_controller=blob" preload>
+  <details-menu class="select-menu-modal hx_rsm-modal position-absolute" style="z-index: 99;" src="/northcoders/be-nc-news/ref-list/master/error-handling.md?source_action=show&amp;source_controller=blob" preload>
     <include-fragment class="select-menu-loading-overlay anim-pulse">
       <svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"/></svg>
     </include-fragment>
@@ -935,13 +935,13 @@
                 data-hotkey="t">
             Find file
           </a>
-          <clipboard-copy value="README.md" class="btn btn-sm BtnGroup-item">
+          <clipboard-copy value="error-handling.md" class="btn btn-sm BtnGroup-item">
             Copy path
           </clipboard-copy>
         </div>
       </span>
       <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal flex-md-self-center ml-md-2 mr-md-3 my-2 my-md-0">
-        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/northcoders/be-nc-news"><span>be-nc-news</span></a></span></span><span class="separator">/</span><strong class="final-path">README.md</strong>
+        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/northcoders/be-nc-news"><span>be-nc-news</span></a></span></span><span class="separator">/</span><strong class="final-path">error-handling.md</strong>
       </h2>
 
       <div class="BtnGroup flex-shrink-0 d-none d-md-inline-block">
@@ -951,7 +951,7 @@
               data-hotkey="t">
           Find file
         </a>
-        <clipboard-copy value="README.md" class="btn btn-sm BtnGroup-item">
+        <clipboard-copy value="error-handling.md" class="btn btn-sm BtnGroup-item">
           Copy path
         </clipboard-copy>
       </div>
@@ -966,24 +966,24 @@
           <a rel="contributor" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=30554468" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/AnthonyMedina"><img class="avatar" src="https://avatars1.githubusercontent.com/u/30554468?s=40&amp;v=4" width="20" height="20" alt="@AnthonyMedina" /></a>
           <a class="text-bold link-gray-dark lh-default v-align-middle" rel="contributor" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=30554468" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/AnthonyMedina">AnthonyMedina</a>
             <span class="lh-default v-align-middle">
-              <a data-pjax="true" title="alter readme git instructions (#12)" class="link-gray" href="/northcoders/be-nc-news/commit/2d89f36991af190899358ad3dc1de6cef5e3d659">alter readme git instructions (</a><a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="459806231" data-permission-text="Issue title is private" data-url="https://github.com/northcoders/be-nc-news/issues/12" data-hovercard-type="pull_request" data-hovercard-url="/northcoders/be-nc-news/pull/12/hovercard" href="https://github.com/northcoders/be-nc-news/pull/12">#12</a><a data-pjax="true" title="alter readme git instructions (#12)" class="link-gray" href="/northcoders/be-nc-news/commit/2d89f36991af190899358ad3dc1de6cef5e3d659">)</a>
+              <a data-pjax="true" title="Update error-handling.md" class="link-gray" href="/northcoders/be-nc-news/commit/e1a1d3c4d41e9ad182c87d815b7c792eb3245709">Update error-handling.md</a>
             </span>
         </span>
         <span class="d-inline-block flex-shrink-0 v-align-bottom f6 mt-2 mt-md-0">
-          <a class="pr-2 text-mono link-gray" href="/northcoders/be-nc-news/commit/2d89f36991af190899358ad3dc1de6cef5e3d659" data-pjax>2d89f36</a>
-          <relative-time datetime="2019-06-24T10:19:05Z">Jun 24, 2019</relative-time>
+          <a class="pr-2 text-mono link-gray" href="/northcoders/be-nc-news/commit/e1a1d3c4d41e9ad182c87d815b7c792eb3245709" data-pjax>e1a1d3c</a>
+          <relative-time datetime="2019-05-15T09:21:20Z">May 15, 2019</relative-time>
         </span>
       </div>
 
     <div class="Box-body d-flex flex-items-center flex-auto f6 border-bottom-0 flex-wrap" >
       <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-2" id="blob_contributors_box">
         <summary class="btn-link" aria-haspopup="dialog">
-          <span><strong>7</strong> contributors</span>
+          <span><strong>1</strong> contributor</span>
         </summary>
         <details-dialog
           class="Box Box--overlay d-flex flex-column anim-fade-in fast"
           aria-label="Users who have contributed to this file"
-          src="/northcoders/be-nc-news/contributors/master/README.md/list" preload>
+          src="/northcoders/be-nc-news/contributors/master/error-handling.md/list" preload>
           <div class="Box-header">
             <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
               <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
@@ -995,24 +995,6 @@
           <include-fragment class="octocat-spinner my-3" aria-label="Loading..."></include-fragment>
         </details-dialog>
       </details>
-        <span class="">
-    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=30554468" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/northcoders/be-nc-news/commits/master/README.md?author=AnthonyMedina">
-      <img class="avatar mr-1" src="https://avatars1.githubusercontent.com/u/30554468?s=40&amp;v=4" width="20" height="20" alt="@AnthonyMedina" /> 
-</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=24394918" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/northcoders/be-nc-news/commits/master/README.md?author=rogersop">
-      <img class="avatar mr-1" src="https://avatars3.githubusercontent.com/u/24394918?s=40&amp;v=4" width="20" height="20" alt="@rogersop" /> 
-</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=25401570" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/northcoders/be-nc-news/commits/master/README.md?author=Dedekind561">
-      <img class="avatar mr-1" src="https://avatars1.githubusercontent.com/u/25401570?s=40&amp;v=4" width="20" height="20" alt="@Dedekind561" /> 
-</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=32910752" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/northcoders/be-nc-news/commits/master/README.md?author=AnatDean">
-      <img class="avatar mr-1" src="https://avatars3.githubusercontent.com/u/32910752?s=40&amp;v=4" width="20" height="20" alt="@AnatDean" /> 
-</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=31252326" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/northcoders/be-nc-news/commits/master/README.md?author=P-Copley">
-      <img class="avatar mr-1" src="https://avatars1.githubusercontent.com/u/31252326?s=40&amp;v=4" width="20" height="20" alt="@P-Copley" /> 
-</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=24604688" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/northcoders/be-nc-news/commits/master/README.md?author=icellusedkars">
-      <img class="avatar mr-1" src="https://avatars0.githubusercontent.com/u/24604688?s=40&amp;v=4" width="20" height="20" alt="@icellusedkars" /> 
-</a>    <a class="avatar-link" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=43074797" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/northcoders/be-nc-news/commits/master/README.md?author=daviidbartlett">
-      <img class="avatar mr-1" src="https://avatars1.githubusercontent.com/u/43074797?s=40&amp;v=4" width="20" height="20" alt="@daviidbartlett" /> 
-</a>
-</span>
-
     </div>
   </div>
 
@@ -1025,17 +1007,17 @@
 <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
 
   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-      402 lines (256 sloc)
+      76 lines (46 sloc)
       <span class="file-info-divider"></span>
-    12.3 KB
+    1.81 KB
   </div>
 
   <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/northcoders/be-nc-news/raw/master/README.md">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/northcoders/be-nc-news/blame/master/README.md">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/northcoders/be-nc-news/commits/master/README.md">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/northcoders/be-nc-news/raw/master/error-handling.md">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/northcoders/be-nc-news/blame/master/error-handling.md">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/northcoders/be-nc-news/commits/master/error-handling.md">History</a>
     </div>
 
 
@@ -1047,13 +1029,13 @@
                 <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
             </a>
 
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/northcoders/be-nc-news/edit/master/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="+9/d5EJ1XnFLpyQGgHPu7gZNxSJKDQs8bQI8csHx1Ql4Xkg0KCjz7ghvYkm6o7rdTw0LJbkecZLAmnDZoNDI+w==" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/northcoders/be-nc-news/edit/master/error-handling.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="DGwTcnrvXuLat1EgYrIb7++Vjqff9ZvV4KiCU0yc2kj9dT66UKohkD0/+i1XonHXTgPJ6mW6pfPURM+g2/hqog==" />
               <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
                 aria-label="Edit the file in your fork of this project" data-hotkey="e" data-disable-with>
                 <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
               </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/northcoders/be-nc-news/delete/master/README.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="j4rjXJs3JDAXjgf1ZWKaNueSP6vUevmAtU9+b3/cAEPqMcBGhi1GFP1W1zX8iYFmRMva3QPnnzAIhpUOGwxT3w==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/northcoders/be-nc-news/delete/master/error-handling.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="5mBQDgt9HZzqXQrx1CnT6Klo45mb5BVyb5XFExaDQ6nLJfZ3T6NjZMjJn59gowg9Ot9C8CeG7nvwN16MoPXf1w==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Delete the file in your fork of this project" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -1067,330 +1049,69 @@
 
       
   <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-    <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h1><a id="user-content-northcoders-news-api" class="anchor" aria-hidden="true" href="#northcoders-news-api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Northcoders News API</h1>
-<p><strong>You can clone this repository but do not fork it</strong></p>
-<h2><a id="user-content-background" class="anchor" aria-hidden="true" href="#background"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background</h2>
-<p>We will be building the API to use in the Northcoders News Sprint during the Front End block of the course.</p>
-<p>Your database will be PSQL, and you will interact with it using <a href="https://knexjs.org" rel="nofollow">Knex</a>.</p>
-<h2><a id="user-content-step-1---setting-up-your-own-repository" class="anchor" aria-hidden="true" href="#step-1---setting-up-your-own-repository"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 1 - Setting up your own repository</h2>
-<p>Clone this repo:</p>
-<div class="highlight highlight-source-shell"><pre>git clone https://github.com/northcoders/be-nc-news
-
-<span class="pl-c1">cd</span> be-nc-news</pre></div>
-<p>On GitHub create your own <strong>public</strong> repository for your project. <strong>Make sure NOT to initialise it with a README or .gitignore.</strong></p>
-<p>Next, you should hook your local version up to the newly created GitHub repo. Use the following terminal commands, making sure to check the git remotes with each step (<code>git remote -v</code>):</p>
-<div class="highlight highlight-source-shell"><pre>git remote remove origin
-
-<span class="pl-c"><span class="pl-c">#</span> This will prevent you from pushing to the original Northcoders' repo.</span></pre></div>
-<div class="highlight highlight-source-shell"><pre>git remote add origin <span class="pl-k">&lt;</span>YOUR-GITHUB-URL<span class="pl-k">&gt;</span>
-
-<span class="pl-c"><span class="pl-c">#</span> This will add your GitHub location to your local git repository.</span>
-<span class="pl-c"><span class="pl-c">#</span> You can confirm this by checking the new git remote.</span></pre></div>
-<h2><a id="user-content-step-2---setting-up-your-project" class="anchor" aria-hidden="true" href="#step-2---setting-up-your-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 2 - Setting up your project</h2>
-<p>In this repo we have provided you with the knexfile. Make sure to add it to the <code>.gitignore</code> once you start pushing to your own repository. If you are on linux insert your postgres username and password into the knexfile.</p>
-<p>You have also been provided with a <code>db</code> folder with some data, a <a href="/northcoders/be-nc-news/blob/master/db/setup.sql">setup.sql</a> file, a <code>seeds</code> folder and a <code>utils</code> folder. You should also take a minute to familiarise yourself with the npm scripts you have been provided.</p>
-<p>Your second task is to make accessing both sets of data around your project easier. You should make 3 <code>index.js</code> files: one in <code>db</code>, and one in each of your data folders.</p>
-<p>The job of <code>index.js</code> in each the data folders is to export out all the data from that folder, currently stored in separate files. This is so that, when you need access to the data elsewhere, you can write one convenient require statement - to the index file, rather than having to require each file individually. Make sure the index file exports an object with values of the data from that folder with the keys:</p>
-<ul>
-<li><code>topicData</code></li>
-<li><code>articleData</code></li>
-<li><code>userData</code></li>
-<li><code>commentData</code></li>
-</ul>
-<p>The job of the <code>db/index.js</code> file will be to export out of the db folder <em>only the data relevant to the current environment</em>. Specifically this file should allow your seed file to access only a specific set of data depending on the environment it's in: test, development or production. To do this is will have to require in all the data and should make use of <code>process.env</code> in your <code>index.js</code> file to achieve only exporting the right data out.</p>
-<p><strong>HINT: make sure the keys you export match up with the keys required into the seed file</strong></p>
-<h2><a id="user-content-step-3---migrations-and-seeding" class="anchor" aria-hidden="true" href="#step-3---migrations-and-seeding"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3 - Migrations and Seeding</h2>
-<p>Your seed file should now be set up to require in either test or dev data depending on the environment.</p>
-<p>You will need to create your migrations and complete the provided seed function to insert the appropriate data into your database.</p>
-<h3><a id="user-content-migrations" class="anchor" aria-hidden="true" href="#migrations"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Migrations</h3>
-<p>This is where you will set up the schema for each table in your database.</p>
-<p>You should have separate tables for <code>topics</code>, <code>articles</code>, <code>users</code> and <code>comments</code>. You will need to think carefully about the order in which you create your migrations.</p>
-<p>Each topic should have:</p>
-<ul>
-<li><code>slug</code> field which is a unique string that acts as the table's primary key</li>
-<li><code>description</code> field which is a string giving a brief description of a given topic</li>
-</ul>
-<p>Each user should have:</p>
-<ul>
-<li><code>username</code> which is the primary key &amp; unique</li>
-<li><code>avatar_url</code></li>
-<li><code>name</code></li>
-</ul>
-<p>Each article should have:</p>
-<ul>
-<li><code>article_id</code> which is the primary key</li>
-<li><code>title</code></li>
-<li><code>body</code></li>
-<li><code>votes</code> defaults to 0</li>
-<li><code>topic</code> field which references the slug in the topics table</li>
-<li><code>author</code> field that references a user's primary key (username)</li>
-<li><code>created_at</code> defaults to the current timestamp</li>
-</ul>
-<p>Each comment should have:</p>
-<ul>
-<li>
-<p><code>comment_id</code> which is the primary key</p>
-</li>
-<li>
-<p><code>author</code> field that references a user's primary key (username)</p>
-</li>
-<li>
-<p><code>article_id</code> field that references an article's primary key</p>
-</li>
-<li>
-<p><code>votes</code> defaults to 0</p>
-</li>
-<li>
-<p><code>created_at</code> defaults to the current timestamp</p>
-</li>
-<li>
-<p><code>body</code></p>
-</li>
-<li>
-<p><strong>NOTE:</strong> psql expects <code>Timestamp</code> types to be in a specific date format - <strong>not a unix timestamp</strong> as they are in our data! However, you can easily <strong>re-format a unix timestamp into something compatible with our database using JS - you will be doing this in your utility function</strong>... <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" rel="nofollow">JavaScript Date object</a></p>
-</li>
-</ul>
-<h3><a id="user-content-seeding" class="anchor" aria-hidden="true" href="#seeding"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Seeding</h3>
-<p>You need to complete the provided seed function to insert the appropriate data into your database.</p>
-<p>Utilising your data manipulation skills, you will also need to complete the utility functions provided - <code>formatDate</code>, <code>makeRefObj</code>, and <code>formatComments</code> for the seed function to work. Instructions on these utility functions are in the <a href="/northcoders/be-nc-news/blob/master/db/utils/README.md">utils README</a>.</p>
-<p><strong>Some advice: don't write all the utility functions in one go, write them when you need them in your seed</strong></p>
+    <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h1><a id="user-content-possible-errors" class="anchor" aria-hidden="true" href="#possible-errors"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Possible Errors</h1>
+<p>This is an incomplete guide to the possible errors that may happen in your app. It is designed to prompt you to think about the errors that could occur as a client uses each endpoint that you have created.</p>
+<p>Think about what could go wrong for each route, and the HTTP status code should be sent to the client in each case.
+For each thing that could go wrong, make a test with your expected status code and then make sure that possibility is handled.</p>
 <hr>
-<h2><a id="user-content-step-4---building-endpoints" class="anchor" aria-hidden="true" href="#step-4---building-endpoints"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 4 - Building Endpoints</h2>
+<h2><a id="user-content-relevant-http-status-codes" class="anchor" aria-hidden="true" href="#relevant-http-status-codes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Relevant HTTP Status Codes</h2>
 <ul>
-<li>Use proper project configuration from the offset, being sure to treat development and test environments differently.</li>
-<li>Test each route <strong>as you go</strong>, checking both successful requests <strong>and the variety of errors you could expect to encounter</strong> <a href="/northcoders/be-nc-news/blob/master/error-handling.md">See the error-handling file here for ideas of errors that will need to be considered</a>.</li>
-<li>After taking the happy path when testing a route, think about how a client could make it go wrong. Add a test for that situation, then error handling to deal with it gracefully.</li>
-<li><strong>HINT</strong>: You will need to take advantage of knex migrations in order to efficiently test your application.</li>
+<li>200 OK</li>
+<li>201 Created</li>
+<li>204 No Content</li>
+<li>400 Bad Request</li>
+<li>404 Not Found</li>
+<li>405 Method Not Allowed</li>
+<li>418 I'm a teapot</li>
+<li>422 Unprocessable Entity</li>
+<li>500 Internal Server Error</li>
 </ul>
 <hr>
-<h3><a id="user-content-vital-routes" class="anchor" aria-hidden="true" href="#vital-routes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vital Routes</h3>
-<p>Your server <em>must</em> have the following endpoints:</p>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api/topics</span>
-
-<span class="pl-k">GET</span><span class="pl-c1"> /api/users/:username</span>
-
-<span class="pl-k">GET</span><span class="pl-c1"> /api/articles/:article_id</span>
-<span class="pl-k">PATCH</span><span class="pl-c1"> /api/articles/:article_id</span>
-
-<span class="pl-k">POST</span><span class="pl-c1"> /api/articles/:article_id/comments</span>
-<span class="pl-k">GET</span><span class="pl-c1"> /api/articles/:article_id/comments</span>
-
-<span class="pl-k">GET</span><span class="pl-c1"> /api/articles</span>
-
-<span class="pl-k">PATCH</span><span class="pl-c1"> /api/comments/:comment_id</span>
-<span class="pl-k">DELETE</span><span class="pl-c1"> /api/comments/:comment_id</span>
-
-<span class="pl-k">GET</span><span class="pl-c1"> /api</span></pre></div>
-<hr>
-<h3><a id="user-content-route-requirements" class="anchor" aria-hidden="true" href="#route-requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Route Requirements</h3>
-<p><em><strong>All of your endpoints should send the below responses in an object, with a key name of what it is that being sent. E.g.</strong></em></p>
-<div class="highlight highlight-source-json"><pre>{
-  <span class="pl-s"><span class="pl-pds">"</span>topics<span class="pl-pds">"</span></span>: [
-    {
-      <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Code is love, code is life<span class="pl-pds">"</span></span>,
-      <span class="pl-s"><span class="pl-pds">"</span>slug<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>coding<span class="pl-pds">"</span></span>
-    },
-    {
-      <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>FOOTIE!<span class="pl-pds">"</span></span>,
-      <span class="pl-s"><span class="pl-pds">"</span>slug<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>football<span class="pl-pds">"</span></span>
-    },
-    {
-      <span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Hey good looking, what you got cooking?<span class="pl-pds">"</span></span>,
-      <span class="pl-s"><span class="pl-pds">"</span>slug<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>cooking<span class="pl-pds">"</span></span>
-    }
-  ]
-}</pre></div>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api/topics</span></pre></div>
-<h4><a id="user-content-responds-with" class="anchor" aria-hidden="true" href="#responds-with"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
+<h2><a id="user-content-the-express-documentation" class="anchor" aria-hidden="true" href="#the-express-documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Express Documentation</h2>
+<p><a href="https://expressjs.com/en/guide/error-handling.html" rel="nofollow">The Express Docs</a> have a great section all about handling errors in Express.</p>
+<h2><a id="user-content-unavailable-routes" class="anchor" aria-hidden="true" href="#unavailable-routes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unavailable Routes</h2>
+<h3><a id="user-content-get-not-a-route" class="anchor" aria-hidden="true" href="#get-not-a-route"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/not-a-route</code></h3>
 <ul>
-<li>an array of topic objects, each of which should have the following properties:
+<li>Status:</li>
+</ul>
+<h3><a id="user-content-patch--put--post--delete-apiarticles-etc" class="anchor" aria-hidden="true" href="#patch--put--post--delete-apiarticles-etc"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PATCH / PUT / POST / DELETE... <code>/api/articles</code> etc...</h3>
 <ul>
-<li><code>slug</code></li>
-<li><code>description</code></li>
+<li>Status:</li>
+</ul>
+<hr>
+<h2><a id="user-content-available-routes" class="anchor" aria-hidden="true" href="#available-routes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Available Routes</h2>
+<h3><a id="user-content-get-apitopics" class="anchor" aria-hidden="true" href="#get-apitopics"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/api/topics</code></h3>
+<ul>
+<li>?</li>
+</ul>
+<h3><a id="user-content-get-apiarticles" class="anchor" aria-hidden="true" href="#get-apiarticles"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/api/articles</code></h3>
+<ul>
+<li>Bad queries:
+<ul>
+<li><code>sort_by</code> a column that doesn't exist</li>
+<li><code>order</code> !== "asc" / "desc"</li>
+<li><code>author</code> / <code>topic</code> that is not in the database</li>
+<li><code>author</code> / <code>topic</code> that exists but does not have any articles associated with it</li>
 </ul>
 </li>
 </ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api/users/:username</span></pre></div>
-<h4><a id="user-content-responds-with-1" class="anchor" aria-hidden="true" href="#responds-with-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
+<h3><a id="user-content-get-apiarticlesarticle_id" class="anchor" aria-hidden="true" href="#get-apiarticlesarticle_id"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/api/articles/:article_id</code></h3>
 <ul>
-<li>a user object which should have the following properties:
+<li>Bad <code>article_id</code> (e.g. <code>/dog</code>)</li>
+<li>Well formed <code>article_id</code> that doesn't exist in the database (e.g. <code>/999999</code>)</li>
+</ul>
+<h3><a id="user-content-patch-apiarticlesarticle_id" class="anchor" aria-hidden="true" href="#patch-apiarticlesarticle_id"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PATCH <code>/api/articles/:article_id</code></h3>
 <ul>
-<li><code>username</code></li>
-<li><code>avatar_url</code></li>
-<li><code>name</code></li>
+<li>No <code>inc_votes</code> on request body</li>
+<li>Invalid <code>inc_votes</code> (e.g. <code>{ inc_votes : "cat" }</code>)</li>
+<li>Some other property on request body (e.g. <code>{ inc_votes : "cat", name: 'Mitch' }</code>)</li>
 </ul>
-</li>
-</ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api/articles/:article_id</span></pre></div>
-<h4><a id="user-content-responds-with-2" class="anchor" aria-hidden="true" href="#responds-with-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
-<ul>
-<li>
-<p>an article object, which should have the following properties:</p>
-<ul>
-<li><code>author</code> which is the <code>username</code> from the users table</li>
-<li><code>title</code></li>
-<li><code>article_id</code></li>
-<li><code>body</code></li>
-<li><code>topic</code></li>
-<li><code>created_at</code></li>
-<li><code>votes</code></li>
-<li><code>comment_count</code> which is the total count of all the comments with this article_id - you should make use of knex queries in order to achieve this</li>
-</ul>
-</li>
-</ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">PATCH</span><span class="pl-c1"> /api/articles/:article_id</span></pre></div>
-<h4><a id="user-content-request-body-accepts" class="anchor" aria-hidden="true" href="#request-body-accepts"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request body accepts</h4>
-<ul>
-<li>
-<p>an object in the form <code>{ inc_votes: newVote }</code></p>
-<ul>
-<li><code>newVote</code> will indicate how much the <code>votes</code> property in the database should be updated by</li>
-</ul>
-<p>e.g.</p>
-<p><code>{ inc_votes : 1 }</code> would increment the current article's vote property by 1</p>
-<p><code>{ inc_votes : -100 }</code> would decrement the current article's vote property by 100</p>
-</li>
-</ul>
-<h4><a id="user-content-responds-with-3" class="anchor" aria-hidden="true" href="#responds-with-3"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
-<ul>
-<li>the updated article</li>
-</ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">POST</span><span class="pl-c1"> /api/articles/:article_id/comments</span></pre></div>
-<h4><a id="user-content-request-body-accepts-1" class="anchor" aria-hidden="true" href="#request-body-accepts-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request body accepts</h4>
-<ul>
-<li>an object with the following properties:
-<ul>
-<li><code>username</code></li>
-<li><code>body</code></li>
-</ul>
-</li>
-</ul>
-<h4><a id="user-content-responds-with-4" class="anchor" aria-hidden="true" href="#responds-with-4"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
-<ul>
-<li>the posted comment</li>
-</ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api/articles/:article_id/comments</span></pre></div>
-<h4><a id="user-content-responds-with-5" class="anchor" aria-hidden="true" href="#responds-with-5"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
-<ul>
-<li>an array of comments for the given <code>article_id</code> of which each comment should have the following properties:
-<ul>
-<li><code>comment_id</code></li>
-<li><code>votes</code></li>
-<li><code>created_at</code></li>
-<li><code>author</code> which is the <code>username</code> from the users table</li>
-<li><code>body</code></li>
-</ul>
-</li>
-</ul>
-<h4><a id="user-content-accepts-queries" class="anchor" aria-hidden="true" href="#accepts-queries"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accepts queries</h4>
-<ul>
-<li><code>sort_by</code>, which sorts the articles by any valid column (defaults to created_at)</li>
-<li><code>order</code>, which can be set to <code>asc</code> or <code>desc</code> for ascending or descending (defaults to descending)</li>
-</ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api/articles</span></pre></div>
-<h4><a id="user-content-responds-with-6" class="anchor" aria-hidden="true" href="#responds-with-6"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
-<ul>
-<li>an <code>articles</code> array of article objects, each of which should have the following properties:
-<ul>
-<li><code>author</code> which is the <code>username</code> from the users table</li>
-<li><code>title</code></li>
-<li><code>article_id</code></li>
-<li><code>topic</code></li>
-<li><code>created_at</code></li>
-<li><code>votes</code></li>
-<li><code>comment_count</code> which is the total count of all the comments with this article_id - you should make use of knex queries in order to achieve this</li>
-</ul>
-</li>
-</ul>
-<h4><a id="user-content-should-accept-queries" class="anchor" aria-hidden="true" href="#should-accept-queries"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Should accept queries</h4>
-<ul>
-<li><code>sort_by</code>, which sorts the articles by any valid column (defaults to date)</li>
-<li><code>order</code>, which can be set to <code>asc</code> or <code>desc</code> for ascending or descending (defaults to descending)</li>
-<li><code>author</code>, which filters the articles by the username value specified in the query</li>
-<li><code>topic</code>, which filters the articles by the topic value specified in the query</li>
-</ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">PATCH</span><span class="pl-c1"> /api/comments/:comment_id</span></pre></div>
-<h4><a id="user-content-request-body-accepts-2" class="anchor" aria-hidden="true" href="#request-body-accepts-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Request body accepts</h4>
-<ul>
-<li>
-<p>an object in the form <code>{ inc_votes: newVote }</code></p>
-<ul>
-<li><code>newVote</code> will indicate how much the <code>votes</code> property in the database should be updated by</li>
-</ul>
-<p>e.g.</p>
-<p><code>{ inc_votes : 1 }</code> would increment the current article's vote property by 1</p>
-<p><code>{ inc_votes : -1 }</code> would decrement the current article's vote property by 1</p>
-</li>
-</ul>
-<h4><a id="user-content-responds-with-7" class="anchor" aria-hidden="true" href="#responds-with-7"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
-<ul>
-<li>the updated comment</li>
-</ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">DELETE</span><span class="pl-c1"> /api/comments/:comment_id</span></pre></div>
-<h4><a id="user-content-should" class="anchor" aria-hidden="true" href="#should"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Should</h4>
-<ul>
-<li>delete the given comment by <code>comment_id</code></li>
-</ul>
-<h4><a id="user-content-responds-with-8" class="anchor" aria-hidden="true" href="#responds-with-8"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
-<ul>
-<li>status 204 and no content</li>
-</ul>
-<hr>
-<h1><a id="user-content-stop" class="anchor" aria-hidden="true" href="#stop"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>STOP!</h1>
-<p>If you have reached this point, go back and review all of the routes that you have created. Consider whether there are any errors that could occur that you haven't yet accounted for. If you identify any, write a test, and then handle the error. Even if you can't think of a specific error for a route, every controller that invokes a promise-based model should contain a <code>.catch</code> block to prevent unhandled promise rejections.</p>
-<p>As soon as you think that you have handled all the possible errors that you can think of, let someone on the teaching team know. One of us will be able to take a look at your code and give you some feedback. While we are looking at your code, you can continue with the following:</p>
-<h1><a id="user-content-continue" class="anchor" aria-hidden="true" href="#continue"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Continue...</h1>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api</span></pre></div>
-<h4><a id="user-content-responds-with-9" class="anchor" aria-hidden="true" href="#responds-with-9"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Responds with</h4>
-<ul>
-<li>JSON describing all the available endpoints on your API</li>
-</ul>
-<hr>
-<h3><a id="user-content-step-3---hosting" class="anchor" aria-hidden="true" href="#step-3---hosting"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3 - Hosting</h3>
-<p>Make sure your application and your database is hosted using Heroku</p>
-<h3><a id="user-content-step-4---readme" class="anchor" aria-hidden="true" href="#step-4---readme"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 4 - README</h3>
-<p>Write a README for your project. Check out this <a href="https://gist.github.com/PurpleBooth/109311bb0361f32d87a2">guide</a> for what sort of things should be included.</p>
-<p>It should also include the link to where your Heroku app is hosted.</p>
-<p>Take a look at GitHub's guide for <a href="https://guides.github.com/features/mastering-markdown/">mastering markdown</a> for making it look pretty!</p>
-<h3><a id="user-content-optional-extras" class="anchor" aria-hidden="true" href="#optional-extras"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Optional Extras</h3>
-<h4><a id="user-content-pagination" class="anchor" aria-hidden="true" href="#pagination"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pagination</h4>
-<p>To make sure that an API can handle large amounts of data, it is often necessary to use <strong>pagination</strong>. Head over to <a href="https://www.google.co.uk/search?q=cute+puppies" rel="nofollow">Google</a>, and you will notice that the search results are broken down into pages. It would not be feasible to serve up <em>all</em> the results of a search in one go. The same is true of websites / apps like Facebook or Twitter (except they hide this by making requests for the next page in the background, when we scroll to the bottom of the browser). We can implement this functionality on our <code>/api/articles</code> and <code>/api/comments</code> endpoints.</p>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api/articles</span></pre></div>
-<ul>
-<li>Should accepts the following queries:
-<ul>
-<li><code>limit</code>, which limits the number of responses (defaults to 10)</li>
-<li><code>p</code>, stands for page which specifies the page at which to start (calculated using limit)</li>
-</ul>
-</li>
-<li>add a <code>total_count</code> property, displaying the total number of articles (<strong>this should display the total number of articles with any filters applied, discounting the limit</strong>)</li>
-</ul>
-<hr>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">GET</span><span class="pl-c1"> /api/articles/:article_id/comments</span></pre></div>
-<p>Should accept the following queries:</p>
-<ul>
-<li><code>limit</code>, which limits the number of responses (defaults to 10)</li>
-<li><code>p</code>, stands for page which specifies the page at which to start (calculated using limit)</li>
-</ul>
-<h4><a id="user-content-more-routes" class="anchor" aria-hidden="true" href="#more-routes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More Routes</h4>
-<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">POST</span><span class="pl-c1"> /api/articles</span>
-
-<span class="pl-k">DELETE</span><span class="pl-c1"> /api/articles/:article_id</span>
-
-<span class="pl-k">POST</span><span class="pl-c1"> /api/topics</span>
-
-<span class="pl-k">POST</span><span class="pl-c1"> /api/users</span>
-<span class="pl-k">GET</span><span class="pl-c1"> /api/users</span></pre></div>
+<h3><a id="user-content-get-apiarticlesarticle_idcomments" class="anchor" aria-hidden="true" href="#get-apiarticlesarticle_idcomments"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/api/articles/:article_id/comments</code></h3>
+<h3><a id="user-content-post-apiarticlesarticle_idcomments" class="anchor" aria-hidden="true" href="#post-apiarticlesarticle_idcomments"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>POST <code>/api/articles/:article_id/comments</code></h3>
+<h3><a id="user-content-patch-apicommentscomment_id" class="anchor" aria-hidden="true" href="#patch-apicommentscomment_id"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PATCH <code>/api/comments/:comment_id</code></h3>
+<h3><a id="user-content-delete-apicommentscomment_id" class="anchor" aria-hidden="true" href="#delete-apicommentscomment_id"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DELETE <code>/api/comments/:comment_id</code></h3>
+<h3><a id="user-content-get-apiusersusername" class="anchor" aria-hidden="true" href="#get-apiusersusername"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/api/users/:username</code></h3>
+<h3><a id="user-content-get-api" class="anchor" aria-hidden="true" href="#get-api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET <code>/api</code></h3>
 </article>
   </div>
 
@@ -1423,7 +1144,7 @@
 <div class="footer container-lg width-full p-responsive" role="contentinfo">
   <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.64862s from unicorn-cbbd6bbf9-msrz8">GitHub</span>, Inc.</li>
+      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.52424s from unicorn-5c9c5f84c8-qq85t">GitHub</span>, Inc.</li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>

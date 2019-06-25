@@ -1,1239 +1,172 @@
+# Hosting a PSQL DB using Heroku
 
+There are many ways to host applications like the one you have created. One of these solutions is Heroku. Heroku provides a service that you can push your code to and it will build, run and host it. Heroku also allows for easy database integration. Their [documentation](https://devcenter.heroku.com/articles/getting-started-with-nodejs) is excellent, so take a look at that. This document is essentially a more condensed, specific version of the steps described in the Heroku docs.
 
+## 1. Install the Heroku CLI
 
+On macOS:
 
+```bash
+brew tap heroku/brew && brew install heroku
+```
 
+...or Ubuntu:
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-  <link rel="dns-prefetch" href="https://github.githubassets.com">
-  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
-  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+```bash
+sudo snap install --classic heroku
+```
 
+## 2. Create a Heroku App
 
+Log into Heroku using their command line interface:
 
-  <link crossorigin="anonymous" media="all" integrity="sha512-67V2J9Se2CifJlftk9/cExHGvxd7N9b9EdGnQEpszu99Ogeecilu9jIDxoCkx3zNLfB9ArraXW0J03qyVmN0Uw==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-e7318add1f7e055d040edb0f75aaa0ba.css" />
-  
-    <link crossorigin="anonymous" media="all" integrity="sha512-PdA3Ntu5WuQev2UGbuBXxowK2BsbCQiasCc1/4MT81IpZH2J2jbua2gDBabvMRFFN8pYfnd4PeqYSIPd8EfUag==" rel="stylesheet" href="https://github.githubassets.com/assets/github-8c4272b17090e14ccd7ac9bd62e6dfdd.css" />
-    
-    
-    
-    
+```bash
+heroku login
+```
 
-  <meta name="viewport" content="width=device-width">
-  
-  <title>be-nc-news/hosting.md at master · northcoders/be-nc-news</title>
-    <meta name="description" content="Contribute to northcoders/be-nc-news development by creating an account on GitHub.">
-    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
-  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
-  <meta property="fb:app_id" content="1401488693436528">
+Create an app in an active git directory. Doing this in the folder where your server exists is a good start, as this is what you will be hosting.
 
-    <meta name="twitter:image:src" content="https://avatars2.githubusercontent.com/u/16081355?s=400&amp;v=4" /><meta name="twitter:site" content="@github" /><meta name="twitter:card" content="summary" /><meta name="twitter:title" content="northcoders/be-nc-news" /><meta name="twitter:description" content="Contribute to northcoders/be-nc-news development by creating an account on GitHub." />
-    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/16081355?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="northcoders/be-nc-news" /><meta property="og:url" content="https://github.com/northcoders/be-nc-news" /><meta property="og:description" content="Contribute to northcoders/be-nc-news development by creating an account on GitHub." />
+```bash
+heroku create your-app-name
+```
 
-  <link rel="assets" href="https://github.githubassets.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzkxNjYzMjAwOjI2MTc1ZmVhZmUyMzQ5YjUyNmVkYzVkZjcxYTBmMGNkY2FlNDA5NDY3ODZkYmQ2NWE2ZWJkMGVkNzcwY2Q0Yjk=--ac103ba829c19067bbefa5b8af59923a198e6734">
-  <meta name="pjax-timeout" content="1000">
-  <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="D792:25D36:8DD404F:D93C970:5D11D91B" data-pjax-transient>
+Here `your-app-name` should be the name you want to give your application. If you don't specify an app name, you'll get a random one which can sometimes be a bit iffy.
 
+This command will both create an app on Heroku for your account. It will also add a new `remote` to your git repository.
+Check this by looking at your git remotes:
 
-  
+```bash
+git remote -v
+```
 
-  <meta name="selected-link" value="repo_source" data-pjax-transient>
+## 3. Push Your code up to Heroku
 
-      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
-    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
-    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+```bash
+git push heroku master
+```
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="D792:25D36:8DD404F:D93C970:5D11D91B" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="49308371" /><meta name="octolytics-actor-login" content="tom-entwisle" /><meta name="octolytics-actor-hash" content="26dc90d892a067c66d7d60d1d4b19bab560b3a79ceb0e827701c15a549fe9f6a" />
-<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
+## 4. Creating a Hosted Database
 
+Go to the heroku site and log in.
 
+- Select your application
+- `Configure Add-ons`
+- Choose `Heroku Postgres`
 
-    <meta name="google-analytics" content="UA-3769691-2">
+The free tier will be adequate for our purposes. This will provide you with a `postgreSQL` pre-created database!
 
-  <meta class="js-ga-set" name="userId" content="14448b8078d239f8400e81c06f851db8">
+Check that the database exists. Click `settings` on it, and view the credentials. Keep an eye on the URI. Don't close this yet!
 
-<meta class="js-ga-set" name="dimension1" content="Logged In">
+## 5. Seeding the Production Database
 
+Check that your database's url is added to the environment variables on Heroku:
 
+```bash
+heroku config:get DATABASE_URL
+```
 
-  
+If you are in your app's directory, and the database is correctly linked as an add on to Heroku, it should display a DB URI string that is exactly the same as the one in your credentials.
 
-      <meta name="hostname" content="github.com">
-    <meta name="user-login" content="tom-entwisle">
+At the top of your `knexfile.js`, add the following line of code:
 
-      <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="ZTRiNGU5Yjc2NWFmZTMxYzRmYTE2ZWY0NGJmMzI3ODk2MDY2MTU0YmI0ZGMwNWI2NGY1MDY1YmJlMTdkMzBlOXx7InJlbW90ZV9hZGRyZXNzIjoiMTg1LjIwNS4xNzIuNCIsInJlcXVlc3RfaWQiOiJENzkyOjI1RDM2OjhERDQwNEY6RDkzQzk3MDo1RDExRDkxQiIsInRpbWVzdGFtcCI6MTU2MTQ1MDgzMCwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+```js
+const { DB_URL } = process.env;
+```
 
-    <meta name="enabled-features" content="UNIVERSE_BANNER,MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PULL_PANDA_HOMEPAGE,NOTIFY_ON_BLOCK,RELATED_ISSUES,DISPLAY_COMMENTER_FULL_NAME">
+Then add a `production` key to the `customConfigs` object:
 
-  <meta name="html-safe-nonce" content="3985229c0b5336b67ed6f4ead29324ab44f76e7d">
-
-  <meta http-equiv="x-pjax-version" content="30845261ef0c717a1fee02722bd26de1">
-  
-
-      <link href="https://github.com/northcoders/be-nc-news/commits/master.atom?token=ALYGFU7NWOY66EUYWZ54RG53D4M52" rel="alternate" title="Recent Commits to be-nc-news:master" type="application/atom+xml">
-
-  <meta name="go-import" content="github.com/northcoders/be-nc-news git https://github.com/northcoders/be-nc-news.git">
-
-  <meta name="octolytics-dimension-user_id" content="16081355" /><meta name="octolytics-dimension-user_login" content="northcoders" /><meta name="octolytics-dimension-repository_id" content="158201319" /><meta name="octolytics-dimension-repository_nwo" content="northcoders/be-nc-news" /><meta name="octolytics-dimension-repository_public" content="false" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="158201319" /><meta name="octolytics-dimension-repository_network_root_nwo" content="northcoders/be-nc-news" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
-
-
-    <link rel="canonical" href="https://github.com/northcoders/be-nc-news/blob/master/hosting.md" data-pjax-transient>
-
-
-  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
-
-  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
-
-  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
-  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
-
-<meta name="theme-color" content="#1e2327">
-
-
-  <meta name="u2f-enabled" content="true">
-
-
-
-  <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
-
-  </head>
-
-  <body class="logged-in env-production emoji-size-boost page-responsive page-blob">
-    
-
-  <div class="position-relative js-header-wrapper ">
-    <a href="#start-of-content" tabindex="1" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
-    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
-
-    
-    
-    
-
-
-          <header class="Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
-
-    <div class="Header-item d-none d-lg-flex">
-      <a class="Header-link" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
-  <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-</a>
-
-    </div>
-
-    <div class="Header-item d-lg-none">
-      <button class="Header-link btn-link js-details-target" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 12 16" version="1.1" width="18" aria-hidden="true"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"/></svg>
-      </button>
-    </div>
-
-    <div class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
-        <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to"
-  role="combobox"
-  aria-owns="jump-to-results"
-  aria-label="Search or jump to"
-  aria-haspopup="listbox"
-  aria-expanded="false"
->
-  <div class="position-relative">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-site-search-form" role="search" aria-label="Site" data-scope-type="Repository" data-scope-id="158201319" data-scoped-search-url="/northcoders/be-nc-news/search" data-unscoped-search-url="/search" action="/northcoders/be-nc-news/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-      <label class="form-control input-sm header-search-wrapper p-0 header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
-        <input type="text"
-          class="form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
-          data-hotkey="s,/"
-          name="q"
-          value=""
-          placeholder="Search or jump to…"
-          data-unscoped-placeholder="Search or jump to…"
-          data-scoped-placeholder="Search or jump to…"
-          autocapitalize="off"
-          aria-autocomplete="list"
-          aria-controls="jump-to-results"
-          aria-label="Search or jump to…"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=XwJpgx7uiOMXZqiCe2MjN5vgVFwTY6xg7djiaJzYb99X/UwxsG4i/8SEjIhpYOuC0kBfY5s66X1FTanEO71KAQ=="
-          spellcheck="false"
-          autocomplete="off"
-          >
-          <input type="hidden" class="js-site-search-type-field" name="type" >
-            <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
-
-            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
-              
-<ul class="d-none js-jump-to-suggestions-template-container">
-  
-
-<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-suggestion" role="option">
-  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
-    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
-      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
-      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
-      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg>
-    </div>
-
-    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
-
-    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
-    </div>
-
-    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
-      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
-        In this repository
-      </span>
-      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
-        All GitHub
-      </span>
-      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
-    </div>
-
-    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
-      Jump to
-      <span class="d-inline-block ml-1 v-align-middle">↵</span>
-    </div>
-  </a>
-</li>
-
-</ul>
-
-<ul class="d-none js-jump-to-no-results-template-container">
-  <li class="d-flex flex-justify-center flex-items-center f5 d-none js-jump-to-suggestion p-2">
-    <span class="text-gray">No suggested jump to results</span>
-  </li>
-</ul>
-
-<ul id="jump-to-results" role="listbox" class="p-0 m-0 js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container">
-  
-
-<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-scoped-search d-none" role="option">
-  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
-    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
-      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
-      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
-      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg>
-    </div>
-
-    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
-
-    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
-    </div>
-
-    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
-      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
-        In this repository
-      </span>
-      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
-        All GitHub
-      </span>
-      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
-    </div>
-
-    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
-      Jump to
-      <span class="d-inline-block ml-1 v-align-middle">↵</span>
-    </div>
-  </a>
-</li>
-
-  
-
-<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-global-search d-none" role="option">
-  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
-    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
-      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
-      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
-      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg>
-    </div>
-
-    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
-
-    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
-    </div>
-
-    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
-      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
-        In this repository
-      </span>
-      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
-        All GitHub
-      </span>
-      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
-    </div>
-
-    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
-      Jump to
-      <span class="d-inline-block ml-1 v-align-middle">↵</span>
-    </div>
-  </a>
-</li>
-
-
-    <li class="d-flex flex-justify-center flex-items-center p-0 f5 js-jump-to-suggestion">
-      <img src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif" alt="Octocat Spinner Icon" class="m-2" width="28">
-    </li>
-</ul>
-
-            </div>
-      </label>
-</form>  </div>
-</div>
-
-
-      <nav class="d-flex flex-column flex-lg-row flex-self-stretch flex-lg-self-auto" aria-label="Global">
-    <a class="Header-link d-block d-lg-none py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-ga-click="Header, click, Nav menu - item:dashboard:user" aria-label="Dashboard" href="/dashboard">
-      Dashboard
-</a>
-  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="/pulls">
-    Pull requests
-</a>
-  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="/issues">
-    Issues
-</a>
-    <div class="mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15">
-      <a class="js-selected-navigation-item Header-link" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click" data-octo-dimensions="location:nav_bar" data-selected-links=" /marketplace" href="/marketplace">
-        Marketplace
-</a>      
-    </div>
-
-  <a class="js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="/explore">
-    Explore
-</a>
-
-    <a class="Header-link d-block d-lg-none mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15" aria-label="View profile and more" aria-expanded="false" aria-haspopup="false" href="https://github.com/tom-entwisle">
-      <img class="avatar" src="https://avatars1.githubusercontent.com/u/49308371?s=40&amp;v=4" width="20" height="20" alt="@tom-entwisle" />
-      tom-entwisle
-</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="K0jQRISckZonDS0r7cN5GGdYoVrqMTX1ERFk7De8bro1Tf1zF1NYTg6ZAffIsQ5HA20oJEY191IulY3B5H+GbQ==" />
-      <button type="submit" class="Header-link mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15 d-lg-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
-        <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"/></svg>
-        Sign out
-      </button>
-</form></nav>
-
-    </div>
-
-    <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative">
-      <div class="css-truncate css-truncate-target width-fit position-absolute left-0 right-0 text-center">
-              <svg class="octicon octicon-lock" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 13H3v-1h1v1zm8-6v7c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h1V4c0-2.2 1.8-4 4-4s4 1.8 4 4v2h1c.55 0 1 .45 1 1zM3.8 6h4.41V4c0-1.22-.98-2.2-2.2-2.2-1.22 0-2.2.98-2.2 2.2v2H3.8zM11 7H2v7h9V7zM4 8H3v1h1V8zm0 2H3v1h1v-1z"/></svg>
-    <a class="Header-link" href="/northcoders">northcoders</a>
-    /
-    <a class="Header-link" href="/northcoders/be-nc-news">be-nc-news</a>
-
-</div>
-    </div>
-
-    <div class="Header-item position-relative d-none d-lg-flex">
-      
-
-    </div>
-
-    <div class="Header-item mr-0 mr-lg-3 flex-order-1 flex-lg-order-none">
-      
-
-    <a aria-label="You have no unread notifications" class="Header-link notification-indicator position-relative tooltipped tooltipped-s js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="notification-changed:49308371" href="/notifications">
-        <span class="mail-status "></span>
-        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"/></svg>
-</a>
-    </div>
-
-
-    <div class="Header-item position-relative d-none d-lg-flex">
-      <details class="details-overlay details-reset">
-  <summary class="Header-link"
-      aria-label="Create new…"
-      data-ga-click="Header, create new, icon:add">
-    <svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg> <span class="dropdown-caret"></span>
-  </summary>
-  <details-menu class="dropdown-menu dropdown-menu-sw">
-    
-<a role="menuitem" class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
-  New repository
-</a>
-
-  <a role="menuitem" class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
-    Import repository
-  </a>
-
-<a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
-  New gist
-</a>
-
-  <a role="menuitem" class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
-    New organization
-  </a>
-
-
-  <div role="none" class="dropdown-divider"></div>
-  <div class="dropdown-header">
-    <span title="northcoders/be-nc-news">This repository</span>
-  </div>
-    <a role="menuitem" class="dropdown-item" href="/northcoders/be-nc-news/issues/new" data-ga-click="Header, create new issue" data-skip-pjax>
-      New issue
-    </a>
-
-
-  </details-menu>
-</details>
-
-    </div>
-
-    <div class="Header-item position-relative mr-0 d-none d-lg-flex">
-      
-<details class="details-overlay details-reset">
-  <summary class="Header-link"
-    aria-label="View profile and more"
-    data-ga-click="Header, show menu, icon:avatar">
-    <img alt="@tom-entwisle" class="avatar" src="https://avatars1.githubusercontent.com/u/49308371?s=40&amp;v=4" height="20" width="20">
-    <span class="dropdown-caret"></span>
-  </summary>
-  <details-menu class="dropdown-menu dropdown-menu-sw mt-2" style="width: 180px">
-    <div class="header-nav-current-user css-truncate"><a role="menuitem" class="no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block" href="/tom-entwisle" data-ga-click="Header, go to profile, text:Signed in as">Signed in as <strong class="css-truncate-target">tom-entwisle</strong></a></div>
-    <div role="none" class="dropdown-divider"></div>
-
-      <div class="pl-3 pr-3 f6 user-status-container js-user-status-context pb-1" data-url="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1">
-        
-<div class="js-user-status-container
-    user-status-compact rounded-1 px-2 py-1 mt-2
-    border
-  " data-team-hovercards-enabled>
-  <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
-    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit " aria-haspopup="dialog" role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:16081355,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:49308371,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD404F:D93C970:5D11D91B&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/hosting.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;}}" data-hydro-click-hmac="1df3cb09878e0bf94980549157c452145f4960eb2dfe5ca985084a7925c510bc">
-      <div class="d-flex">
-        <div class="f6 lh-condensed user-status-header
-          d-inline-block v-align-middle
-            user-status-emoji-only-header circle
-            pr-2
-"
-            style="max-width: 29px"
-          >
-          <div class="user-status-emoji-container flex-shrink-0 mr-1 mt-1 lh-condensed-ultra v-align-bottom" style="">
-            <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 0 1-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 0 1-1.45-2.17A6.59 6.59 0 0 1 1.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 0 1 8 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"/></svg>
-          </div>
-        </div>
-        <div class="
-          d-inline-block v-align-middle
-          
-          
-           css-truncate css-truncate-target 
-           user-status-message-wrapper f6"
-           style="line-height: 20px;" >
-          <div class="d-inline-block text-gray-dark v-align-text-top text-left">
-              <span class="text-gray ml-2">Set status</span>
-          </div>
-        </div>
-      </div>
-</summary>    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="WXs59OsbgLqHpc9dhKISzDWejLn0YmWB8DEYx4lT/sO2IJqJ1D+QWHmAO7VYPjaEslhOROvvTrIWxwEE+ID7Cw==" />
-        <div class="Box-header bg-gray border-bottom p-3">
-          <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
-            <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
-          </button>
-          <h3 class="Box-title f5 text-bold text-gray-dark">Edit status</h3>
-        </div>
-        <input type="hidden" name="emoji" class="js-user-status-emoji-field" value="">
-        <input type="hidden" name="organization_id" class="js-user-status-org-id-field" value="">
-        <div class="px-3 py-2 text-gray-dark">
-          <div class="js-characters-remaining-container position-relative mt-2">
-            <div class="input-group d-table form-group my-0 js-user-status-form-group">
-              <span class="input-group-button d-table-cell v-align-middle" style="width: 1%">
-                <button type="button" aria-label="Choose an emoji" class="btn-outline btn js-toggle-user-status-emoji-picker btn-open-emoji-picker p-0">
-                  <span class="js-user-status-original-emoji" hidden></span>
-                  <span class="js-user-status-custom-emoji"></span>
-                  <span class="js-user-status-no-emoji-icon" >
-                    <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 0 1-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 0 1-1.45-2.17A6.59 6.59 0 0 1 1.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 0 1 8 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"/></svg>
-                  </span>
-                </button>
-              </span>
-              <text-expander keys=": @" data-mention-url="/autocomplete/user-suggestions" data-emoji-url="/autocomplete/emoji">
-                <input
-                  type="text"
-                  autocomplete="off"
-                  data-no-org-url="/autocomplete/user-suggestions"
-                  data-org-url="/suggestions?mention_suggester=1"
-                  data-maxlength="80"
-                  class="d-table-cell width-full form-control js-user-status-message-field js-characters-remaining-field"
-                  placeholder="What's happening?"
-                  name="message"
-                  value=""
-                  aria-label="What is your current status?">
-              </text-expander>
-              <div class="error">Could not update your status, please try again.</div>
-            </div>
-            <div style="margin-left: 53px" class="my-1 text-small label-characters-remaining js-characters-remaining" data-suffix="remaining" hidden>
-              80 remaining
-            </div>
-          </div>
-          <include-fragment class="js-user-status-emoji-picker" data-url="/users/status/emoji"></include-fragment>
-          <div class="overflow-auto ml-n3 mr-n3 px-3 border-bottom" style="max-height: 33vh">
-            <div class="user-status-suggestions js-user-status-suggestions collapsed overflow-hidden">
-              <h4 class="f6 text-normal my-3">Suggestions:</h4>
-              <div class="mx-3 mt-2 clearfix">
-                  <div class="float-left col-6">
-                      <button type="button" value=":palm_tree:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
-                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
-                          <g-emoji alias="palm_tree" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png">🌴</g-emoji>
-                        </div>
-                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
-                          On vacation
-                        </div>
-                      </button>
-                      <button type="button" value=":face_with_thermometer:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
-                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
-                          <g-emoji alias="face_with_thermometer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f912.png">🤒</g-emoji>
-                        </div>
-                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
-                          Out sick
-                        </div>
-                      </button>
-                  </div>
-                  <div class="float-left col-6">
-                      <button type="button" value=":house:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
-                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
-                          <g-emoji alias="house" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png">🏠</g-emoji>
-                        </div>
-                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
-                          Working from home
-                        </div>
-                      </button>
-                      <button type="button" value=":dart:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
-                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
-                          <g-emoji alias="dart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png">🎯</g-emoji>
-                        </div>
-                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
-                          Focusing
-                        </div>
-                      </button>
-                  </div>
-              </div>
-            </div>
-            <div class="user-status-limited-availability-container">
-              <div class="form-checkbox my-0">
-                <input type="checkbox" name="limited_availability" value="1" class="js-user-status-limited-availability-checkbox" data-default-message="I may be slow to respond." aria-describedby="limited-availability-help-text-truncate-true-compact-true" id="limited-availability-truncate-true-compact-true">
-                <label class="d-block f5 text-gray-dark mb-1" for="limited-availability-truncate-true-compact-true">
-                  Busy
-                </label>
-                <p class="note" id="limited-availability-help-text-truncate-true-compact-true">
-                  When others mention you, assign you, or request your review,
-                  GitHub will let them know that you have limited availability.
-                </p>
-              </div>
-            </div>
-          </div>
-            
-
-<div class="d-inline-block f5 mr-2 pt-3 pb-2" >
-  <div class="d-inline-block mr-1">
-    Clear status
-  </div>
-
-  <details class="js-user-status-expire-drop-down f6 dropdown details-reset details-overlay d-inline-block mr-2">
-    <summary class="f5 btn-link link-gray-dark border px-2 py-1 rounded-1" aria-haspopup="true">
-      <div class="js-user-status-expiration-interval-selected d-inline-block v-align-baseline">
-        Never
-      </div>
-      <div class="dropdown-caret"></div>
-    </summary>
-
-    <ul class="dropdown-menu dropdown-menu-se pl-0 overflow-auto" style="width: 220px; max-height: 15.5em">
-      <li>
-        <button type="button" class="btn-link dropdown-item js-user-status-expire-button ws-normal" title="Never">
-          <span class="d-inline-block text-bold mb-1">Never</span>
-          <div class="f6 lh-condensed">Keep this status until you clear your status or edit your status.</div>
-        </button>
-      </li>
-      <li class="dropdown-divider" role="none"></li>
-        <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2019-06-25T09:50:30+01:00">
-            in 30 minutes
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2019-06-25T10:20:30+01:00">
-            in 1 hour
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2019-06-25T13:20:30+01:00">
-            in 4 hours
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="today" value="2019-06-25T23:59:59+01:00">
-            today
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="this week" value="2019-06-30T23:59:59+01:00">
-            this week
-          </button>
-        </li>
-    </ul>
-  </details>
-  <input class="js-user-status-expiration-date-input" type="hidden" name="expires_at" value="">
-</div>
-
-          <include-fragment class="js-user-status-org-picker" data-url="/users/status/organizations"></include-fragment>
-        </div>
-        <div class="d-flex flex-items-center flex-justify-between p-3 border-top">
-          <button type="submit" disabled class="width-full btn btn-primary mr-2 js-user-status-submit">
-            Set status
-          </button>
-          <button type="button" disabled class="width-full js-clear-user-status-button btn ml-2 ">
-            Clear status
-          </button>
-        </div>
-</form>    </details-dialog>
-  </details>
-</div>
-
-      </div>
-      <div role="none" class="dropdown-divider"></div>
-
-
-    <a role="menuitem" class="dropdown-item" href="/tom-entwisle" data-ga-click="Header, go to profile, text:your profile">Your profile</a>
-    <a role="menuitem" class="dropdown-item" href="/tom-entwisle?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories">Your repositories</a>
-
-    <a role="menuitem" class="dropdown-item" href="/tom-entwisle?tab=projects" data-ga-click="Header, go to projects, text:your projects">Your projects</a>
-
-    <a role="menuitem" class="dropdown-item" href="/tom-entwisle?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">Your stars</a>
-      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists">Your gists</a>
-
-
-    <div role="none" class="dropdown-divider"></div>
-    <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
-    <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Tn/gh2Y3kofiWv1ZyaZfAHMuoBESeYEEyd/20ILAYghQes2w9fhbU8vO0YXs1ChfFxspb759Q6P2Wx/9UQOK3w==" />
-      
-      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
-        Sign out
-      </button>
-</form>  </details-menu>
-</details>
-
-    </div>
-
-  </header>
-
-      
-
-  </div>
-
-  <div id="start-of-content" class="show-on-focus"></div>
-
-
-    <div id="js-flash-container">
-
-</div>
-
-
-
-  <div class="application-main " data-commit-hovercards-enabled>
-        <div itemscope itemtype="http://schema.org/SoftwareSourceCode" class="">
-    <main  >
-      
-
-
-  
-
-
-
-  
-
-
-
-
-  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-4 ">
-    <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
-
-      <ul class="pagehead-actions">
-
-
-
-
-  <li>
-    
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="P60jvWRU5CFDjqjUyA1G6AqR3lSo5wq8qI+jTyU0Mqdui+kSXN6rqQbUBWQq2X1/cP8TAWEz+l7Yv6eIw3eJgQ==" />      <input type="hidden" name="repository_id" value="158201319">
-
-      <details class="details-reset details-overlay select-menu float-left">
-        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD404F:D93C970:5D11D91B&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/hosting.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="06ca4b9a906f274441f491c896806bf1dfc8a40add69ca2f0628155779d0d27a" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
-              <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-              Watch
-          </span>
-</summary>        <details-menu
-          class="select-menu-modal position-absolute mt-5"
-          style="z-index: 99;">
-          <div class="select-menu-header">
-            <span class="select-menu-title">Notifications</span>
-          </div>
-          <div class="select-menu-list">
-            <button type="submit" name="do" value="included" class="select-menu-item width-full" aria-checked="true" role="menuitemradio">
-              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
-              <div class="select-menu-item-text">
-                <span class="select-menu-item-heading">Not watching</span>
-                <span class="description">Be notified only when participating or @mentioned.</span>
-                <span class="hidden-select-button-text" data-menu-button-contents>
-                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                  Watch
-                </span>
-              </div>
-            </button>
-
-            <button type="submit" name="do" value="release_only" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
-              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
-              <div class="select-menu-item-text">
-                <span class="select-menu-item-heading">Releases only</span>
-                <span class="description">Be notified of new releases, and when participating or @mentioned.</span>
-                <span class="hidden-select-button-text" data-menu-button-contents>
-                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                  Unwatch releases
-                </span>
-              </div>
-            </button>
-
-            <button type="submit" name="do" value="subscribed" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
-              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
-              <div class="select-menu-item-text">
-                <span class="select-menu-item-heading">Watching</span>
-                <span class="description">Be notified of all conversations.</span>
-                <span class="hidden-select-button-text" data-menu-button-contents>
-                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
-                  Unwatch
-                </span>
-              </div>
-            </button>
-
-            <button type="submit" name="do" value="ignore" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
-              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
-              <div class="select-menu-item-text">
-                <span class="select-menu-item-heading">Ignoring</span>
-                <span class="description">Never be notified.</span>
-                <span class="hidden-select-button-text" data-menu-button-contents>
-                  <svg class="octicon octicon-mute v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
-                  Stop ignoring
-                </span>
-              </div>
-            </button>
-          </div>
-        </details-menu>
-      </details>
-        <a class="social-count js-social-count"
-          href="/northcoders/be-nc-news/watchers"
-          aria-label="1 user is watching this repository">
-          1
-        </a>
-</form>
-  </li>
-
-  <li>
-      <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/northcoders/be-nc-news/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="T1+UKYgoCFHQE7uq/FlYiYBd0Jdv79x5fzITmQhtwYd6BByTRY4PifqsrjBIFpasrS92AUq5cW4jNuFqFQtP0Q==" />
-      <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar northcoders/be-nc-news" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD404F:D93C970:5D11D91B&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/hosting.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="3f0da8f8fdcbcc03ad418056e6cb5013ab4eda3d029997c85f3b3bda27fbb55c" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
-        Unstar
-</button>        <a class="social-count js-social-count" href="/northcoders/be-nc-news/stargazers"
-           aria-label="0 users starred this repository">
-          0
-        </a>
-</form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/northcoders/be-nc-news/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="jXsjONH4h2sQr56vJrD77+J13gWYmlJZ9Tym610R7E7Xaz3DmYKcVp6PPjYm7Ab3pqgYtJGTnFaMFFsY2bes3g==" />
-      <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star northcoders/be-nc-news" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD404F:D93C970:5D11D91B&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/hosting.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="6580e44724b4a167fd5115c9d14fa393fece9ea41b9eab00d1b834fd9432f5b8" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
-        Star
-</button>        <a class="social-count js-social-count" href="/northcoders/be-nc-news/stargazers"
-           aria-label="0 users starred this repository">
-          0
-        </a>
-</form>  </div>
-
-  </li>
-
-  <li>
-          <details class="details-reset details-overlay details-overlay-dark d-inline-block float-left">
-            <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:158201319,&quot;client_id&quot;:&quot;2145463795.1552416135&quot;,&quot;originating_request_id&quot;:&quot;D792:25D36:8DD404F:D93C970:5D11D91B&quot;,&quot;originating_url&quot;:&quot;https://github.com/northcoders/be-nc-news/blob/master/hosting.md&quot;,&quot;referrer&quot;:&quot;https://github.com/northcoders/be-nc-news&quot;,&quot;user_id&quot;:49308371}}" data-hydro-click-hmac="8f982b149c98f5388fed94eb1b9ad80340c7dd5cda79d275c416e56e3a10e516" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" title="Fork your own copy of northcoders/be-nc-news to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-              Fork
-</summary>            <details-dialog
-              class="anim-fade-in fast Box Box--overlay d-flex flex-column"
-              src="/northcoders/be-nc-news/fork?fragment=1"
-              preload>
-              <div class="Box-header">
-                <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
-                  <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
-                </button>
-                <h3 class="Box-title">Fork be-nc-news</h3>
-              </div>
-              <div class="overflow-auto text-center">
-                <include-fragment>
-                  <div class="octocat-spinner my-3" aria-label="Loading..."></div>
-                  <p class="f5 text-gray">If this dialog fails to load, you can visit <a href="/northcoders/be-nc-news/fork">the fork page</a> directly.</p>
-                </include-fragment>
-              </div>
-            </details-dialog>
-          </details>
-
-    <a href="/northcoders/be-nc-news/network/members" class="social-count"
-       aria-label="75 users forked this repository">
-      75
-    </a>
-  </li>
-</ul>
-
-      <h1 class="private ">
-    <svg class="octicon octicon-lock" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 13H3v-1h1v1zm8-6v7c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h1V4c0-2.2 1.8-4 4-4s4 1.8 4 4v2h1c.55 0 1 .45 1 1zM3.8 6h4.41V4c0-1.22-.98-2.2-2.2-2.2-1.22 0-2.2.98-2.2 2.2v2H3.8zM11 7H2v7h9V7zM4 8H3v1h1V8zm0 2H3v1h1v-1z"/></svg>
-  <span class="author" itemprop="author"><a class="url fn" rel="author" data-hovercard-type="organization" data-hovercard-url="/orgs/northcoders/hovercard" href="/northcoders">northcoders</a></span><!--
---><span class="path-divider">/</span><!--
---><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="/northcoders/be-nc-news">be-nc-news</a></strong>
-  <span class="Label Label--outline v-align-middle ">Private</span>
-
-</h1>
-
-    </div>
-    
-<nav class="hx_reponav reponav js-repo-nav js-sidenav-container-pjax container-lg p-responsive d-none d-lg-block"
-     itemscope
-     itemtype="http://schema.org/BreadcrumbList"
-    aria-label="Repository"
-     data-pjax="#js-repo-pjax-container">
-
-  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /northcoders/be-nc-news" href="/northcoders/be-nc-news">
-      <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
-      <span itemprop="name">Code</span>
-      <meta itemprop="position" content="1">
-</a>  </span>
-
-    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /northcoders/be-nc-news/issues" href="/northcoders/be-nc-news/issues">
-        <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
-        <span itemprop="name">Issues</span>
-        <span class="Counter">0</span>
-        <meta itemprop="position" content="2">
-</a>    </span>
-
-  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /northcoders/be-nc-news/pulls" href="/northcoders/be-nc-news/pulls">
-      <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
-      <span itemprop="name">Pull requests</span>
-      <span class="Counter">1</span>
-      <meta itemprop="position" content="3">
-</a>  </span>
-
-
-    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /northcoders/be-nc-news/projects" href="/northcoders/be-nc-news/projects">
-      <svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
-      Projects
-      <span class="Counter" >0</span>
-</a>
-
-    <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /northcoders/be-nc-news/wiki" href="/northcoders/be-nc-news/wiki">
-      <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
-      Wiki
-</a>
-    <a data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="security alerts policy /northcoders/be-nc-news/security/advisories" href="/northcoders/be-nc-news/security/advisories">
-      <svg class="octicon octicon-shield" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2l7-2 7 2v6.02C14 12.69 8.69 16 7 16c-1.69 0-7-3.31-7-7.98V2zm1 .75L7 1l6 1.75v5.268C13 12.104 8.449 15 7 15c-1.449 0-6-2.896-6-6.982V2.75zm1 .75L7 2v12c-1.207 0-5-2.482-5-5.985V3.5z"/></svg>
-      Security
-</a>
-    <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse people /northcoders/be-nc-news/pulse" href="/northcoders/be-nc-news/pulse">
-      <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
-      Insights
-</a>
-
-</nav>
-
-  <div class="reponav-wrapper reponav-small d-lg-none">
-  <nav class="reponav js-reponav text-center no-wrap"
-       itemscope
-       itemtype="http://schema.org/BreadcrumbList">
-
-    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <a class="js-selected-navigation-item selected reponav-item" itemprop="url" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /northcoders/be-nc-news" href="/northcoders/be-nc-news">
-        <span itemprop="name">Code</span>
-        <meta itemprop="position" content="1">
-</a>    </span>
-
-      <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /northcoders/be-nc-news/issues" href="/northcoders/be-nc-news/issues">
-          <span itemprop="name">Issues</span>
-          <span class="Counter">0</span>
-          <meta itemprop="position" content="2">
-</a>      </span>
-
-    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-      <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /northcoders/be-nc-news/pulls" href="/northcoders/be-nc-news/pulls">
-        <span itemprop="name">Pull requests</span>
-        <span class="Counter">1</span>
-        <meta itemprop="position" content="3">
-</a>    </span>
-
-      <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /northcoders/be-nc-news/projects" href="/northcoders/be-nc-news/projects">
-          <span itemprop="name">Projects</span>
-          <span class="Counter">0</span>
-          <meta itemprop="position" content="4">
-</a>      </span>
-
-      <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
-        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_wiki /northcoders/be-nc-news/wiki" href="/northcoders/be-nc-news/wiki">
-          <span itemprop="name">Wiki</span>
-          <meta itemprop="position" content="5">
-</a>      </span>
-
-      <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="security alerts policy /northcoders/be-nc-news/security/advisories" href="/northcoders/be-nc-news/security/advisories">
-        <span itemprop="name">Security</span>
-        <meta itemprop="position" content="6">
-</a>
-      <a class="js-selected-navigation-item reponav-item" data-selected-links="pulse /northcoders/be-nc-news/pulse" href="/northcoders/be-nc-news/pulse">
-        Pulse
-</a>
-
-  </nav>
-</div>
-
-
-  </div>
-<div class="container-lg new-discussion-timeline experiment-repo-nav  p-responsive">
-  <div class="repository-content ">
-
-    
-    
-
-
-  
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/northcoders/be-nc-news/blob/2d89f36991af190899358ad3dc1de6cef5e3d659/hosting.md">Permalink</a>
-
-    <!-- blob contrib key: blob_contributors:v21:b4aed01ec040e72cf5d699db103456bd -->
-      
-
-    <div class="d-flex flex-items-start flex-shrink-0 mb-2 flex-column flex-md-row">
-      <span class="d-flex flex-justify-between width-full width-md-auto">
-        
-<details class="details-reset details-overlay select-menu branch-select-menu  hx_rsm" id="branch-select-menu">
-  <summary class="btn btn-sm select-menu-button css-truncate"
-           data-hotkey="w"
-           
-           title="Switch branches or tags">
-    <i>Branch:</i>
-    <span class="css-truncate-target">master</span>
-  </summary>
-
-  <details-menu class="select-menu-modal hx_rsm-modal position-absolute" style="z-index: 99;" src="/northcoders/be-nc-news/ref-list/master/hosting.md?source_action=show&amp;source_controller=blob" preload>
-    <include-fragment class="select-menu-loading-overlay anim-pulse">
-      <svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"/></svg>
-    </include-fragment>
-  </details-menu>
-</details>
-
-        <div class="BtnGroup flex-shrink-0 d-md-none">
-          <a href="/northcoders/be-nc-news/find/master"
-                class="js-pjax-capture-input btn btn-sm BtnGroup-item"
-                data-pjax
-                data-hotkey="t">
-            Find file
-          </a>
-          <clipboard-copy value="hosting.md" class="btn btn-sm BtnGroup-item">
-            Copy path
-          </clipboard-copy>
-        </div>
-      </span>
-      <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal flex-md-self-center ml-md-2 mr-md-3 my-2 my-md-0">
-        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/northcoders/be-nc-news"><span>be-nc-news</span></a></span></span><span class="separator">/</span><strong class="final-path">hosting.md</strong>
-      </h2>
-
-      <div class="BtnGroup flex-shrink-0 d-none d-md-inline-block">
-        <a href="/northcoders/be-nc-news/find/master"
-              class="js-pjax-capture-input btn btn-sm BtnGroup-item"
-              data-pjax
-              data-hotkey="t">
-          Find file
-        </a>
-        <clipboard-copy value="hosting.md" class="btn btn-sm BtnGroup-item">
-          Copy path
-        </clipboard-copy>
-      </div>
-    </div>
-
-
-
-    
-  <div class="Box Box--condensed d-flex flex-column flex-shrink-0">
-      <div class="Box-body d-flex flex-justify-between bg-blue-light flex-column flex-md-row flex-items-start flex-md-items-center">
-        <span class="pr-md-4 f6">
-          <a rel="contributor" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=30554468" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/AnthonyMedina"><img class="avatar" src="https://avatars1.githubusercontent.com/u/30554468?s=40&amp;v=4" width="20" height="20" alt="@AnthonyMedina" /></a>
-          <a class="text-bold link-gray-dark lh-default v-align-middle" rel="contributor" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=30554468" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/AnthonyMedina">AnthonyMedina</a>
-            <span class="lh-default v-align-middle">
-              <a data-pjax="true" title="edit knexfile example to match knexpress generator" class="link-gray" href="/northcoders/be-nc-news/commit/713339e425985fd63ece0bf3722538d0981994c6">edit knexfile example to match knexpress generator</a>
-            </span>
-        </span>
-        <span class="d-inline-block flex-shrink-0 v-align-bottom f6 mt-2 mt-md-0">
-          <a class="pr-2 text-mono link-gray" href="/northcoders/be-nc-news/commit/713339e425985fd63ece0bf3722538d0981994c6" data-pjax>713339e</a>
-          <relative-time datetime="2019-05-17T11:56:27Z">May 17, 2019</relative-time>
-        </span>
-      </div>
-
-    <div class="Box-body d-flex flex-items-center flex-auto f6 border-bottom-0 flex-wrap" >
-      <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-2" id="blob_contributors_box">
-        <summary class="btn-link" aria-haspopup="dialog">
-          <span><strong>1</strong> contributor</span>
-        </summary>
-        <details-dialog
-          class="Box Box--overlay d-flex flex-column anim-fade-in fast"
-          aria-label="Users who have contributed to this file"
-          src="/northcoders/be-nc-news/contributors/master/hosting.md/list" preload>
-          <div class="Box-header">
-            <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
-              <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
-            </button>
-            <h3 class="Box-title">
-              Users who have contributed to this file
-            </h3>
-          </div>
-          <include-fragment class="octocat-spinner my-3" aria-label="Loading..."></include-fragment>
-        </details-dialog>
-      </details>
-    </div>
-  </div>
-
-
-
-
-
-    <div class="Box mt-3 position-relative">
-      
-<div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
-
-  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-      173 lines (115 sloc)
-      <span class="file-info-divider"></span>
-    4.58 KB
-  </div>
-
-  <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
-
-    <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/northcoders/be-nc-news/raw/master/hosting.md">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/northcoders/be-nc-news/blame/master/hosting.md">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/northcoders/be-nc-news/commits/master/hosting.md">History</a>
-    </div>
-
-
-    <div>
-            <a class="btn-octicon tooltipped tooltipped-nw"
-               href="https://desktop.github.com"
-               aria-label="Open this file in GitHub Desktop"
-               data-ga-click="Repository, open with desktop, type:mac">
-                <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
-            </a>
-
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/northcoders/be-nc-news/edit/master/hosting.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="lBekIdv+aR7iD3mswglnBqTGHGPhNJl51i6DrzCYM5M6r34MB2+bzcEjB3N389dfQQkslP6h6inIpmeeav7evA==" />
-              <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
-                aria-label="Edit the file in your fork of this project" data-hotkey="e" data-disable-with>
-                <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
-              </button>
-</form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/northcoders/be-nc-news/delete/master/hosting.md" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="jZU6+Ce0irL6K1uUPCf2D7uBGUGUyiMBOBp/XvTw++gC3xk6bkj0MjvW7AlTnBcUAZ/kDbSC4Jl8fbC8oVzMRQ==" />
-            <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
-              aria-label="Delete the file in your fork of this project" data-disable-with>
-              <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
-            </button>
-</form>    </div>
-  </div>
-</div>
-
-
-
-
-      
-  <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-    <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h1><a id="user-content-hosting-a-psql-db-using-heroku" class="anchor" aria-hidden="true" href="#hosting-a-psql-db-using-heroku"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hosting a PSQL DB using Heroku</h1>
-<p>There are many ways to host applications like the one you have created. One of these solutions is Heroku. Heroku provides a service that you can push your code to and it will build, run and host it. Heroku also allows for easy database integration. Their <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" rel="nofollow">documentation</a> is excellent, so take a look at that. This document is essentially a more condensed, specific version of the steps described in the Heroku docs.</p>
-<h2><a id="user-content-1-install-the-heroku-cli" class="anchor" aria-hidden="true" href="#1-install-the-heroku-cli"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Install the Heroku CLI</h2>
-<p>On macOS:</p>
-<div class="highlight highlight-source-shell"><pre>brew tap heroku/brew <span class="pl-k">&amp;&amp;</span> brew install heroku</pre></div>
-<p>...or Ubuntu:</p>
-<div class="highlight highlight-source-shell"><pre>sudo snap install --classic heroku</pre></div>
-<h2><a id="user-content-2-create-a-heroku-app" class="anchor" aria-hidden="true" href="#2-create-a-heroku-app"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Create a Heroku App</h2>
-<p>Log into Heroku using their command line interface:</p>
-<div class="highlight highlight-source-shell"><pre>heroku login</pre></div>
-<p>Create an app in an active git directory. Doing this in the folder where your server exists is a good start, as this is what you will be hosting.</p>
-<div class="highlight highlight-source-shell"><pre>heroku create your-app-name</pre></div>
-<p>Here <code>your-app-name</code> should be the name you want to give your application. If you don't specify an app name, you'll get a random one which can sometimes be a bit iffy.</p>
-<p>This command will both create an app on Heroku for your account. It will also add a new <code>remote</code> to your git repository.
-Check this by looking at your git remotes:</p>
-<div class="highlight highlight-source-shell"><pre>git remote -v</pre></div>
-<h2><a id="user-content-3-push-your-code-up-to-heroku" class="anchor" aria-hidden="true" href="#3-push-your-code-up-to-heroku"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Push Your code up to Heroku</h2>
-<div class="highlight highlight-source-shell"><pre>git push heroku master</pre></div>
-<h2><a id="user-content-4-creating-a-hosted-database" class="anchor" aria-hidden="true" href="#4-creating-a-hosted-database"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Creating a Hosted Database</h2>
-<p>Go to the heroku site and log in.</p>
-<ul>
-<li>Select your application</li>
-<li><code>Configure Add-ons</code></li>
-<li>Choose <code>Heroku Postgres</code></li>
-</ul>
-<p>The free tier will be adequate for our purposes. This will provide you with a <code>postgreSQL</code> pre-created database!</p>
-<p>Check that the database exists. Click <code>settings</code> on it, and view the credentials. Keep an eye on the URI. Don't close this yet!</p>
-<h2><a id="user-content-5-seeding-the-production-database" class="anchor" aria-hidden="true" href="#5-seeding-the-production-database"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Seeding the Production Database</h2>
-<p>Check that your database's url is added to the environment variables on Heroku:</p>
-<div class="highlight highlight-source-shell"><pre>heroku config:get DATABASE_URL</pre></div>
-<p>If you are in your app's directory, and the database is correctly linked as an add on to Heroku, it should display a DB URI string that is exactly the same as the one in your credentials.</p>
-<p>At the top of your <code>knexfile.js</code>, add the following line of code:</p>
-<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> { <span class="pl-c1">DB_URL</span> } <span class="pl-k">=</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>;</pre></div>
-<p>Then add a <code>production</code> key to the <code>customConfigs</code> object:</p>
-<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> { <span class="pl-c1">DB_URL</span> } <span class="pl-k">=</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>;
-<span class="pl-c"><span class="pl-c">//</span> ...</span>
-<span class="pl-k">const</span> <span class="pl-c1">customConfigs</span> <span class="pl-k">=</span> {
-  <span class="pl-c"><span class="pl-c">//</span> ...</span>
-  production<span class="pl-k">:</span> {
-    connection<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">`</span><span class="pl-s1"><span class="pl-pse">${</span><span class="pl-c1">DB_URL</span><span class="pl-pse">}</span></span>?ssl=true<span class="pl-pds">`</span></span>,
-  },
-};
-<span class="pl-c"><span class="pl-c">//</span> ...</span></pre></div>
-<p>It is critical to add the query of <code>ssl=true</code>, otherwise this will not work!</p>
-<p>In your <code>./db/data/index.js</code> add a key of production with a value of your development data in your data object. Something like:</p>
-<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">data</span> <span class="pl-k">=</span> { test, development, production<span class="pl-k">:</span> development };</pre></div>
-<p>This is will ensure your production DB will get seeded with the development data.</p>
-<p>In your <code>package.json</code>, add the following keys to the scripts:</p>
-<div class="highlight highlight-source-json"><pre>{
-  <span class="pl-s"><span class="pl-pds">"</span>scripts<span class="pl-pds">"</span></span>: {
-    <span class="pl-s"><span class="pl-pds">"</span>seed:prod<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex seed:run<span class="pl-pds">"</span></span>,
-    <span class="pl-s"><span class="pl-pds">"</span>migrate-latest:prod<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:latest<span class="pl-pds">"</span></span>,
-    <span class="pl-s"><span class="pl-pds">"</span>migrate-rollback:prod<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:rollback<span class="pl-pds">"</span></span>
+```js
+const { DB_URL } = process.env;
+// ...
+const customConfigs = {
+  // ...
+  production: {
+    connection: `${DB_URL}?ssl=true`
   }
-}</pre></div>
-<p>Each of these will establish an environment variable called <code>DB_URL</code>, and set it to whatever heroku provides as your DB URL. It is essential that you do this as the DB URL may change! This deals with a lack of predictability on heroku's end.</p>
-<p>Make sure to <strong>run the seed prod script</strong> from your <code>package.json</code>:</p>
-<div class="highlight highlight-source-shell"><pre>npm run seed:prod</pre></div>
-<h2><a id="user-content-6-connect-to-the-hosted-database-when-on-heroku" class="anchor" aria-hidden="true" href="#6-connect-to-the-hosted-database-when-on-heroku"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. Connect To The Hosted Database when on Heroku</h2>
-<p>Change your connection file to look something like this:</p>
-<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">ENV</span> <span class="pl-k">=</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>.<span class="pl-c1">NODE_ENV</span> <span class="pl-k">||</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>;
-<span class="pl-k">const</span> <span class="pl-c1">knex</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>knex<span class="pl-pds">'</span></span>);
+};
+// ...
+```
 
-<span class="pl-k">const</span> <span class="pl-c1">dbConfig</span> <span class="pl-k">=</span>
-  <span class="pl-c1">ENV</span> <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>
-    <span class="pl-k">?</span> { client<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>pg<span class="pl-pds">'</span></span>, connection<span class="pl-k">:</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>.<span class="pl-c1">DATABASE_URL</span> }
-    <span class="pl-k">:</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>../knexfile<span class="pl-pds">'</span></span>);
+It is critical to add the query of `ssl=true`, otherwise this will not work!
 
-<span class="pl-c1">module</span>.<span class="pl-smi">exports</span> <span class="pl-k">=</span> <span class="pl-en">knex</span>(dbConfig);</pre></div>
-<p>It should check whether you're in production, and if you are, it should connect to the production database. Otherwise it will connect to the (<code>.gitignore</code>'d) knex file.</p>
-<h2><a id="user-content-7-use-herokus-port" class="anchor" aria-hidden="true" href="#7-use-herokus-port"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. Use Heroku's PORT</h2>
-<p>In <code>listen.js</code>, make sure you take the PORT off the environment object if it's provided, like so:</p>
-<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> { <span class="pl-c1">PORT</span> <span class="pl-k">=</span> <span class="pl-c1">9090</span> } <span class="pl-k">=</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>;
+In your `./db/data/index.js` add a key of production with a value of your development data in your data object. Something like:
 
-<span class="pl-smi">app</span>.<span class="pl-en">listen</span>(<span class="pl-c1">PORT</span>, () <span class="pl-k">=&gt;</span> <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">`</span>Listening on <span class="pl-s1"><span class="pl-pse">${</span><span class="pl-c1">PORT</span><span class="pl-pse">}</span></span>...<span class="pl-pds">`</span></span>));</pre></div>
-<h2><a id="user-content-8-add-a-start-script" class="anchor" aria-hidden="true" href="#8-add-a-start-script"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8. Add a start script</h2>
-<p>Make sure your package.json has this as a start script:</p>
-<div class="highlight highlight-source-json"><pre><span class="pl-s"><span class="pl-pds">"</span>start<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>node listen.js<span class="pl-pds">"</span></span>,</pre></div>
-<p>Commit your changes, and push to heroku master.</p>
-<div class="highlight highlight-source-shell"><pre>git push heroku master</pre></div>
-<h2><a id="user-content-9-review-your-app" class="anchor" aria-hidden="true" href="#9-review-your-app"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>9. Review Your App</h2>
-<div class="highlight highlight-source-shell"><pre>heroku open</pre></div>
-<p>Any issues should be debugged with:</p>
-<div class="highlight highlight-source-shell"><pre>heroku logs --tail</pre></div>
-</article>
-  </div>
+```js
+const data = { test, development, production: development };
+```
 
-    </div>
+This is will ensure your production DB will get seeded with the development data.
 
-  
+In your `package.json`, add the following keys to the scripts:
 
-  <details class="details-reset details-overlay details-overlay-dark">
-    <summary data-hotkey="l" aria-label="Jump to line"></summary>
-    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast linejump" aria-label="Jump to line">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-jump-to-line-form Box-body d-flex" action="" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-        <input class="form-control flex-auto mr-3 linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
-        <button type="submit" class="btn" data-close-dialog>Go</button>
-</form>    </details-dialog>
-  </details>
+```json
+{
+  "scripts": {
+    "seed:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex seed:run",
+    "migrate-latest:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:latest",
+    "migrate-rollback:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:rollback"
+  }
+}
+```
 
+Each of these will establish an environment variable called `DB_URL`, and set it to whatever heroku provides as your DB URL. It is essential that you do this as the DB URL may change! This deals with a lack of predictability on heroku's end.
 
+Make sure to **run the seed prod script** from your `package.json`:
 
-  </div>
-  <div class="modal-backdrop js-touch-events"></div>
-</div>
+```bash
+npm run seed:prod
+```
 
-    </main>
-  </div>
-  
+## 6. Connect To The Hosted Database when on Heroku
 
-  </div>
+Change your connection file to look something like this:
 
-        
-<div class="footer container-lg width-full p-responsive" role="contentinfo">
-  <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
-    <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.52345s from unicorn-cbbd6bbf9-xzx8x">GitHub</span>, Inc.</li>
-        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
-        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
-        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
-        <li class="mr-3 mr-lg-0"><a href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
-        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a></li>
-    </ul>
+```js
+const ENV = process.env.NODE_ENV || "development";
+const knex = require("knex");
 
-    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mx-lg-4" href="https://github.com">
-      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-</a>
-   <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-        <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
-        <li class="mr-3 mr-lg-0"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
-      <li class="mr-3 mr-lg-0"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
-      <li class="mr-3 mr-lg-0"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
-        <li class="mr-3 mr-lg-0"><a href="https://github.blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
-        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+const dbConfig =
+  ENV === "production"
+    ? { client: "pg", connection: process.env.DATABASE_URL }
+    : require("../knexfile");
 
-    </ul>
-  </div>
-  <div class="d-flex flex-justify-center pb-6">
-    <span class="f6 text-gray-light"></span>
-  </div>
-</div>
+module.exports = knex(dbConfig);
+```
 
+It should check whether you're in production, and if you are, it should connect to the production database. Otherwise it will connect to the (`.gitignore`'d) knex file.
 
+## 7. Use Heroku's PORT
 
-  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
-    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
-    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
-      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
-    </button>
-    You can’t perform that action at this time.
-  </div>
+In `listen.js`, make sure you take the PORT off the environment object if it's provided, like so:
 
+```js
+const { PORT = 9090 } = process.env;
 
-    
-    <script crossorigin="anonymous" integrity="sha512-rWUfoiXqBbyqmpyOHaN720wY4mOVHuvpZALJtJiXlYULgObHhrhY+bRQ26G1sOqRHb0Iwp0r1AqvHoN4crTGYw==" type="application/javascript" src="https://github.githubassets.com/assets/frameworks-7f7df7ab.js"></script>
-    
-    <script crossorigin="anonymous" async="async" integrity="sha512-EdT/5zDq8WurY0Jky1RwJW2ou8eCQTBwu5vBeiguVstDcpW1cv1Ghar5DVQNnkDZA6wVNJjiX1pQc5vPqn5VXQ==" type="application/javascript" src="https://github.githubassets.com/assets/github-bootstrap-c46abb3d.js"></script>
-    
-    
-    
-  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner" hidden
-    >
-    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
-    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
-    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
-  </div>
-  <template id="site-details-dialog">
-  <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark hx_rsm" open>
-    <summary role="button" aria-label="Close dialog"></summary>
-    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast hx_rsm-dialog hx_rsm-modal">
-      <button class="Box-btn-octicon m-0 btn-octicon position-absolute right-0 top-0" type="button" aria-label="Close dialog" data-close-dialog>
-        <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
-      </button>
-      <div class="octocat-spinner my-6 js-details-dialog-spinner"></div>
-    </details-dialog>
-  </details>
-</template>
+app.listen(PORT, () => console.log(`Listening on ${PORT}...`));
+```
 
-  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
-  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
-  </div>
-</div>
+## 8. Add a start script
 
-  <div aria-live="polite" class="js-global-screen-reader-notice sr-only"></div>
+Make sure your package.json has this as a start script:
 
-  </body>
-</html>
+```json
+"start": "node listen.js",
+```
 
+Commit your changes, and push to heroku master.
+
+```bash
+git push heroku master
+```
+
+## 9. Review Your App
+
+```bash
+heroku open
+```
+
+Any issues should be debugged with:
+
+```bash
+heroku logs --tail
+```

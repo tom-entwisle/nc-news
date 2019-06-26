@@ -29,7 +29,6 @@ exports.seed = (knex, Promise) => {
     .then(articlesRows => {
       let formattedComments = formatDate(commentsData);
       const refObj = createReferenceObject(articlesRows);
-      console.log(refObj);
       formattedComments = formatComments(commentsData, refObj);
       return knex("comments").insert(formattedComments);
     });

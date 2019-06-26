@@ -29,11 +29,11 @@ For each thing that could go wrong, make a test with your expected status code a
 
 ### GET `/not-a-route`
 
-- Status:
+- Status: 404
 
-### PATCH / PUT / POST / DELETE... `/api/articles` etc...
+### PATCH / PUT / DELETE... `/api/articles` etc...
 
-- Status:
+- Status: 405
 
 ---
 
@@ -46,10 +46,10 @@ For each thing that could go wrong, make a test with your expected status code a
 ### GET `/api/articles`
 
 - Bad queries:
-  - `sort_by` a column that doesn't exist -- Handled with 405
-  - `order` !== "asc" / "desc" -- Handled with 405
-  - `author` / `topic` that is not in the database
-  - `author` / `topic` that exists but does not have any articles associated with it
+  - `sort_by` a column that doesn't exist -- Handled with 400
+  - `order` !== "asc" / "desc" -- Handled with 400
+  - `author` / `topic` that is not in the database -- 404
+  - `author` / `topic` that exists but does not have any articles associated with it -- 200 & []
 
 ### GET `/api/articles/:article_id`
 

@@ -1,9 +1,10 @@
 const formatDate = comments => {
   const formattedArr = [];
-  comments.forEach(obj => {
-    const newObj = obj;
-    newObj.created_at = new Date(newObj.created_at);
-    formattedArr.push(newObj);
+  comments.forEach(({ created_at, ...restOfObject }) => {
+    formattedArr.push({
+      created_at: new Date(created_at),
+      ...restOfObject
+    });
   });
   return formattedArr;
 };

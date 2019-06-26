@@ -15,6 +15,8 @@ app.use("/api", apiRouter);
 
 app.all("/*", routeNotFound);
 
+app.use(routeNotFound);
+
 app.use(handle500);
 
 app.use(psqlErrors);

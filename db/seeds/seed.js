@@ -8,7 +8,7 @@ const {
   formatDate,
   formatComments,
   createReferenceObject
-} = require("../data/utils/dataManip");
+} = require("../data/utils/");
 
 exports.seed = (knex, Promise) => {
   return knex.migrate
@@ -28,7 +28,8 @@ exports.seed = (knex, Promise) => {
     })
     .then(articlesRows => {
       let formattedComments = formatDate(commentsData);
-      const refObj = createReferenceObject(formattedComments, articlesRows);
+      const refObj = createReferenceObject(articlesRows);
+      console.log(refObj);
       formattedComments = formatComments(commentsData, refObj);
       return knex("comments").insert(formattedComments);
     });

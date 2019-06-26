@@ -21,6 +21,7 @@ const patchVotes = (article_id, votes) => {
 
 const fetchSeveralArticals = queries => {
   let { sort_by = "created_at", order = "desc", author, topic } = queries;
+  console.log(order);
   if (order !== "asc" && order !== "desc")
     return Promise.reject({
       status: 400,

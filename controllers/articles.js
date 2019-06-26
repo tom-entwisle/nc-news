@@ -1,3 +1,4 @@
+"use strict";
 const {
   fetchArticleById,
   patchVotes,
@@ -5,7 +6,7 @@ const {
 } = require("../models/articles");
 
 exports.sendArticle = (req, res, next) => {
-  article_id = req.params.article_id;
+  const article_id = req.params.article_id;
   fetchArticleById(article_id)
     .then(article => {
       if (article.length === 0) {
@@ -17,7 +18,7 @@ exports.sendArticle = (req, res, next) => {
 };
 
 exports.updateVotes = (req, res, next) => {
-  article_id = req.params.article_id;
+  let article_id = req.params.article_id;
   let votes = req.body.inc_votes;
   if (votes === undefined) votes = 0;
   patchVotes(article_id, votes)

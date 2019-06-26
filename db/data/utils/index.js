@@ -8,15 +8,13 @@ const formatDate = comments => {
   return formattedArr;
 };
 
-const createReferenceObject = (comments, articles) => {
-  const ref = {};
-  comments.forEach(comment => {
-    const artIdObj = articles.find(article => {
-      return article.title === comment.belongs_to;
-    });
-    ref[comment.belongs_to] = artIdObj.article_id;
+const createReferenceObject = articles => {
+  const artSpread = [...articles];
+  const refObj = {};
+  artSpread.forEach(article => {
+    refObj[article.title] = article.article_id;
   });
-  return ref;
+  return refObj;
 };
 
 const formatComments = (comments, refObj) => {

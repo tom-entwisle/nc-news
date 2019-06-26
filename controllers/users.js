@@ -1,7 +1,7 @@
 const { fetchUserDataByUserName } = require("../models/users");
 
 exports.sendUserData = (req, res, next) => {
-  username = req.params.username;
+  let username = req.params.username;
   // console.log(username);
   fetchUserDataByUserName(username)
     .then(user => {

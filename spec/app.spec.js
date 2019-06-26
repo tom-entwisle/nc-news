@@ -22,11 +22,12 @@ describe("/", () => {
   });
 
   describe("/api/doesnotexist", () => {
-    it("GET status:404 'Route Not Found' error handler works correctly", () => {
+    it("GET status:404 Route Not Found error handler works correctly", () => {
       return request(app)
         .get("/api/doesnotexist")
         .expect(404)
         .then(({ body }) => {
+          console.log(body);
           expect(body.msg).to.equal("Route Not Found");
         });
     });

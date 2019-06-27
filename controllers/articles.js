@@ -36,11 +36,10 @@ exports.sendMultipleArticles = (req, res, next) => {
   const queries = req.query;
   fetchSeveralArticals(queries)
     .then(articles => {
-      // console.log(articles);
       if (articles.length === 0)
-        res.status(404).send({
+        return Promise.reject({
           status: 404,
-          msg: "No articles found"
+          msg: "No articles found :("
         });
       res.status(200).send({ articles });
     })

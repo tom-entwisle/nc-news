@@ -21,13 +21,23 @@ describe("/", () => {
     });
   });
 
+  describe("/no-such-directory", () => {
+    it("GET status:404 Route Not Found error handler works correctly outside of the /api route", () => {
+      return request(app)
+        .get("/no-such-directory")
+        .expect(404)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Route Not Found");
+        });
+    });
+  });
+
   describe("/api/doesnotexist", () => {
-    it("GET status:404 Route Not Found error handler works correctly", () => {
+    it("GET status:404 Route Not Found error handler works correctly inside the /api directory", () => {
       return request(app)
         .get("/api/doesnotexist")
         .expect(404)
         .then(({ body }) => {
-          console.log(body);
           expect(body.msg).to.equal("Route Not Found");
         });
     });
@@ -106,6 +116,77 @@ describe("/", () => {
             "votes"
           ]);
           expect(testArticle[0].votes).to.equal(50);
+        });
+    });
+  });
+
+  describe("/api/articles/9274621", () => {
+    it("GET status:404 and to send a 404 error object if the article does not exist", () => {
+      return request(app)
+        .get("/api/articles/9274621")
+        .expect(404)
+        .then(res => {
+          let testArt = JSON.parse(res.text);
+          expect(testArt).to.contain.keys(["status", "msg"]);
+        });
+    });
+    it("GET status:400 (bad request) and to send an object containing an error message explaining this is due to bad syntax", () => {
+      return request(app)
+        .get("/api/articles/green")
+        .expect(400)
+        .then(res => {
+          const testArticleError = JSON.parse(res.text);
+          expect(testArticleError.msg).to.equal(
+            'invalid input syntax for integer: "green"'
+          );
+        });
+    });
+  });
+
+  describe("/api/articles?order=desc", () => {
+    it("GET status:200 when given a query to order the articles by descending order of date created", () => {
+      return request(app)
+        .get("/api/articles?order=desc")
+        .expect(200)
+        .then(res => {
+          let testArts = JSON.parse(res.text);
+          expect(testArts.articles[0].created_at).to.equal(
+            "2018-11-15T12:21:54.171Z"
+          );
+        });
+    });
+    it("GET status:200 when given a query to order the articles by ascending order of date created", () => {
+      return request(app)
+        .get("/api/articles?order=asc")
+        .expect(200)
+        .then(res => {
+          const testArts = JSON.parse(res.text);
+          expect(testArts.articles[0].created_at).to.equal(
+            "1974-11-26T12:21:54.171Z"
+          );
+        });
+    });
+    it("GET status:400 when given a query to order the articles by an invalid parameter", () => {
+      return request(app)
+        .get("/api/articles?order=red")
+        .expect(400)
+        .then(res => {
+          const testArtErr = JSON.parse(res.text);
+          expect(testArtErr.msg).to.equal(
+            "cannot order by red only by asc and desc"
+          );
+        });
+    });
+  });
+
+  describe("/api/articles?author=mrbrown", () => {
+    it("GET status:404 when using a query for an author who does not exist", () => {
+      return request(app)
+        .get("/api/articles?author=mrbrown")
+        .expect(404)
+        .then(res => {
+          const testArticleError = JSON.parse(res.text);
+          expect(testArticleError.msg).to.equal("No articles found :(");
         });
     });
   });

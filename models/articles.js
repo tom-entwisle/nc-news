@@ -21,7 +21,6 @@ const patchVotes = (article_id, votes) => {
 
 const fetchSeveralArticals = queries => {
   let { sort_by = "created_at", order = "desc", author, topic } = queries;
-  console.log(order);
   if (order !== "asc" && order !== "desc")
     return Promise.reject({
       status: 400,
@@ -41,4 +40,20 @@ const fetchSeveralArticals = queries => {
     .returning("*");
 };
 
-module.exports = { fetchArticleById, patchVotes, fetchSeveralArticals };
+const checkExists = article_id => {
+  return connection
+    .select("*")
+    .from("articles")
+    .where("article_id", article_id)
+    .then(article => {
+      if ((article.length = 0)) return false;
+      return true;
+    });
+};
+
+module.exports = {
+  fetchArticleById,
+  patchVotes,
+  fetchSeveralArticals,
+  checkExists
+};

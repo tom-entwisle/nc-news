@@ -32,7 +32,106 @@ describe("/", () => {
     });
   });
 
-  describe("/api/doesnotexist", () => {
+  describe("/api/comments OR articles OR users OR topics", () => {
+    it("PATCH status:405 method not allowed when sending a patch request to /api/comments", () => {
+      return request(app)
+        .patch("/api/comments")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("PATCH status:405 method not allowed when sending a patch request to /api/articles", () => {
+      return request(app)
+        .patch("/api/articles")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("PATCH status:405 method not allowed when sending a patch request to /api/users", () => {
+      return request(app)
+        .patch("/api/users")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("PATCH status:405 method not allowed when sending a patch request to /api/topics", () => {
+      return request(app)
+        .patch("/api/topics")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("DELETE status:405 method not allowed when sending a delete request to /api/comments", () => {
+      return request(app)
+        .delete("/api/comments")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("DELETE status:405 method not allowed when sending a delete request to /api/articles", () => {
+      return request(app)
+        .delete("/api/articles")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("DELETE status:405 method not allowed when sending a delete request to /api/users", () => {
+      return request(app)
+        .delete("/api/users")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("DELETE status:405 method not allowed when sending a delete request to /api/topics", () => {
+      return request(app)
+        .delete("/api/topics")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("PUT status:405 method not allowed when sending a put request to /api/comments", () => {
+      return request(app)
+        .put("/api/comments")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("PUT status:405 method not allowed when sending a put request to /api/articles", () => {
+      return request(app)
+        .put("/api/articles")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("PUT status:405 method not allowed when sending a put request to /api/users", () => {
+      return request(app)
+        .put("/api/users")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+    it("PUT status:405 method not allowed when sending a put request to /api/topics", () => {
+      return request(app)
+        .put("/api/topics")
+        .expect(405)
+        .then(({ body }) => {
+          expect(body.msg).to.equal("Method Not Allowed");
+        });
+    });
+  });
+
+  describe("/api/:doesnotexist", () => {
     it("GET status:404 Route Not Found error handler works correctly inside the /api directory", () => {
       return request(app)
         .get("/api/doesnotexist")
@@ -120,7 +219,7 @@ describe("/", () => {
     });
   });
 
-  describe("/api/articles/9274621", () => {
+  describe("/api/articles/:invalid", () => {
     it("GET status:404 and to send a 404 error object if the article does not exist", () => {
       return request(app)
         .get("/api/articles/9274621")
@@ -143,7 +242,7 @@ describe("/", () => {
     });
   });
 
-  describe("/api/articles?order=desc", () => {
+  describe("/api/articles?order=:userinput", () => {
     it("GET status:200 when given a query to order the articles by descending order of date created", () => {
       return request(app)
         .get("/api/articles?order=desc")
@@ -244,6 +343,23 @@ describe("/", () => {
             "author",
             "created_at",
             "comment_count"
+          ]);
+        });
+    });
+    it("GET status:200 when asked for the comments of an article", () => {
+      return request(app)
+        .get("/api/articles/9/comments")
+        .expect(200)
+        .then(res => {
+          const testComments = JSON.parse(res.text).comments;
+          expect(testComments).to.be.an("array");
+          expect(testComments[0]).to.contain.keys([
+            "comment_id",
+            "author",
+            "article_id",
+            "votes",
+            "created_at",
+            "body"
           ]);
         });
     });

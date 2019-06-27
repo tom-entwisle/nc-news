@@ -2,7 +2,8 @@
 const {
   fetchArticleById,
   patchVotes,
-  fetchSeveralArticals
+  fetchSeveralArticals,
+  checkExists
 } = require("../models/articles");
 
 exports.sendArticle = (req, res, next) => {

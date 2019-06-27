@@ -11,7 +11,7 @@ exports.sendArticle = (req, res, next) => {
   fetchArticleById(article_id)
     .then(article => {
       if (article.length === 0) {
-        res.status(404).send({ status: 404, msg: "article not found" });
+        return Promise.reject({ status: 404, msg: "article not found" });
       }
       res.status(200).send({ article });
     })

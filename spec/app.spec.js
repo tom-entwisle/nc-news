@@ -226,7 +226,7 @@ describe("/", () => {
         .expect(404)
         .then(res => {
           let testArt = JSON.parse(res.text);
-          expect(testArt).to.contain.keys(["status", "msg"]);
+          expect(testArt).to.contain.keys(["msg"]);
         });
     });
     it("GET status:400 (bad request) and to send an object containing an error message explaining this is due to bad syntax", () => {

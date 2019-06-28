@@ -1,0 +1,22 @@
+{
+  "Available Endpoints & Queries": {
+    "Articles": {
+      "api/articles": "Displays all available articles",
+      "api/articles/:article_id": "Displays an article specified by the article ID which should be an integer (e.g. api/articles/42)",
+      "api/articles?order=asc": "Displays all articles by order of date created (ascending)",
+      "api/articles?order=desc": "Displays all articles by order of date created (descending)",
+      "api/articles?author=:parameter": "Displays all articles by a given parameter (e.g. api/articles?author=jessjelly will display articles by the author with username jessjelly)",
+      "api/articles?sort_by=:parameter": "Displays all articles sorted by the specified parameter (e.g. /api/articles?sort_by=author)"
+    },
+    "Topics": {
+      "api/topics": "Displays available topics for articles"
+    },
+    "Comments": {
+      "api/articles/:article_id/comments": "Displays the comments on a given article (e.g. /api/articles/42/comments)",
+      "api/comments/:comment_id": "Displays a comment with the specified ID (e.g. /api/comments/42"
+    },
+    "Users": {
+      "api/users/:username": "Displays information for the user with the specified username (e.g. api/users/jessjelly)"
+    }
+  }
+}

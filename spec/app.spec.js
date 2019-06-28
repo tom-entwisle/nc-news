@@ -413,6 +413,23 @@ describe("/", () => {
           expect(res.body.msg).to.equal("Invalid comment_id: 900");
         });
     });
+    it("PATCH status:200 sends back an the unchanged comment object when no inc_votes key has been passed", () => {
+      return request(app)
+        .patch("/api/comments/3")
+        .send({ internet_points: 15 })
+        .expect(200)
+        .then(res => {
+          expect(res.body).to.be.an("object");
+          expect(res.body.comment).to.contain.keys([
+            "comment_id",
+            "author",
+            "article_id",
+            "votes",
+            "created_at",
+            "body"
+          ]);
+        });
+    });
     it("DELETE status:204 deletes the comment from the database and sends back a 204 status code as confirmation", () => {
       return request(app)
         .delete("/api/comments/12")

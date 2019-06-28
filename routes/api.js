@@ -6,7 +6,8 @@ const topicsRouter = require("./topicsRouter");
 const articlesRouter = require("./articlesRouter");
 const endpointsJSON = require("../endpointsJSON");
 
-let endpoints = endpointsJSON.endpointsJSON;
+let endpoints = endpointsJSON;
+console.log(endpoints);
 
 apiRouter
   .route("/")

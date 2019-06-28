@@ -70,12 +70,20 @@ exports.sendCommentsByArticle = (req, res, next) => {
 };
 
 exports.incVotesForComment = (req, res, next) => {
-  const comment_id = req.params.comment_id;
-  const votes = req.body.inc_votes;
-  if (votes === undefined) votes = 0;
-  incrementVotes(comment_id, votes)
-    .then(comment => res.status(200).send({ comment }))
-    .catch(next);
+  const { comment_id } = req.params;
+  const { inc_votes } = req.body;
+  incrementVotes(comment_id, inc_votes)
+    .then(comment => {
+      if (!comment)
+        return Promise.reject({
+          status: 404,
+          msg: `Invalid comment_id: ${comment_id}`
+        });
+      res.status(200).send({ comment });
+    })
+    .catch(err => {
+      next(err);
+    });
 };
 
 exports.removeComment = (req, res, next) => {

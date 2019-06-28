@@ -19,6 +19,26 @@ exports.sendArticle = (req, res, next) => {
     .catch(next);
 };
 
+exports.sendMultipleArticles = (req, res, next) => {
+  const { topic, author } = req.query;
+  fetchSeveralArticals(req.query)
+    .then(articles => {
+      const topicExists = topic ? checkExists(topic, "topics", "slug") : null;
+      const authorExists = author
+        ? checkExists(author, "users", "username")
+        : null;
+      return Promise.all([topicExists, authorExists, articles]);
+    })
+    .then(([topicExists, authorExists, articles]) => {
+      if (topicExists === false || authorExists === false)
+        return Promise.reject({ status: 404, msg: "No articles found :(" });
+      else res.status(200).send({ articles });
+    })
+    .catch(err => {
+      next(err);
+    });
+};
+
 exports.updateVotes = (req, res, next) => {
   let article_id = req.params.article_id;
   let votes = req.body.inc_votes;
@@ -35,16 +55,16 @@ exports.updateVotes = (req, res, next) => {
     .catch(next);
 };
 
-exports.sendMultipleArticles = (req, res, next) => {
-  const queries = req.query;
-  fetchSeveralArticals(queries)
-    .then(articles => {
-      if (articles.length === 0)
-        return Promise.reject({
-          status: 404,
-          msg: "No articles found :("
-        });
-      res.status(200).send({ articles });
-    })
-    .catch(next);
-};
+// exports.sendMultipleArticles = (req, res, next) => {
+//   const queries = req.query;
+//   fetchSeveralArticals(queries)
+//     .then(articles => {
+//       if (articles.length === 0)
+//         return Promise.reject({
+//           status: 404,
+//           msg: "No articles found :("
+//         });
+//       res.status(200).send({ articles });
+//     })
+//     .catch(next);
+// };

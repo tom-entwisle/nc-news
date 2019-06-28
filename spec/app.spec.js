@@ -310,7 +310,6 @@ describe("/", () => {
         .expect(201)
         .then(res => {
           expect(res.ok).to.equal(true);
-          console.log(res.body);
           expect(res.body).to.be.an("object");
         });
     });
@@ -371,6 +370,24 @@ describe("/", () => {
           ]);
         });
     });
+    it("GET status:200 when asked for the comments of an article which exists but has no comments", () => {
+      return request(app)
+        .get("/api/articles/2/comments")
+        .expect(200)
+        .then(res => {
+          expect(res.body).to.be.an("object");
+          expect(res.body.comments).to.be.an("array");
+        });
+    });
+    it("POST status:404 when asked to post a comment to an article that does not exist", () => {
+      return request(app)
+        .post("/api/articles/700/comments")
+        .expect(404)
+        .then(res => {
+          expect(res.body).to.be.an("object");
+          expect(res.body.msg).to.equal("This article does not exist");
+        });
+    });
   });
 
   describe("/api/comments/:comment_id", () => {
@@ -384,6 +401,16 @@ describe("/", () => {
           const testComment = JSON.parse(res.text);
           expect(testComment).to.be.an("object");
           // console.log(testComment);
+        });
+    });
+    it("PATCH status:404 sends back an error message when attempting to add votes to a comment that does not exist", () => {
+      return request(app)
+        .patch("/api/comments/900")
+        .send({ inc_votes: 15 })
+        .expect(404)
+        .then(res => {
+          expect(res.body).to.be.an("object");
+          expect(res.body.msg).to.equal("Invalid comment_id: 900");
         });
     });
     it("DELETE status:204 deletes the comment from the database and sends back a 204 status code as confirmation", () => {

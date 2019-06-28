@@ -26,13 +26,12 @@ const fetchCommentsByArticle = (article_id, queries) => {
     .returning("*");
 };
 
-const incrementVotes = (comment_id, votes) => {
-  return connection
-    .select("*")
-    .from("comments")
-    .where("comments.comment_id", "=", comment_id)
-    .increment("votes", votes)
-    .returning("*");
+const incrementVotes = (comment_id, updatedVoteCount = 0) => {
+  return connection("comments")
+    .where({ "comments.comment_id": comment_id })
+    .increment("votes", updatedVoteCount)
+    .returning("*")
+    .then(([comment]) => comment);
 };
 
 const deleteComment = comment_id => {

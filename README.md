@@ -113,6 +113,6 @@ DELETE /api/comments/:comment_id
 
 ## Acknowledgements
 
-All of the NC tutors who helped me get things working - none moreso than Ant Media who has the patience of a saint and helped me to not get stressed when things didn't work.
+All of the NC tutors who helped me get things working - none moreso than Ant Medina who has the patience of a saint and helped me to not get stressed when things didn't work.
 
 ![](1.gif)

@@ -41,14 +41,13 @@ const fetchSeveralArticals = queries => {
     .returning("*");
 };
 
-const checkExists = article_id => {
+const checkExists = (value, table, column) => {
   return connection
     .select("*")
-    .from("articles")
-    .where("article_id", article_id)
-    .then(article => {
-      if ((article.length = 0)) return false;
-      return true;
+    .from(table)
+    .where(column, value)
+    .then(rows => {
+      return rows.length !== 0;
     });
 };
 

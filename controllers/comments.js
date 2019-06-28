@@ -5,6 +5,8 @@ const {
   deleteComment
 } = require("../models/comments");
 
+const { checkExists } = require("../models/articles");
+
 const { fetchArticleById } = require("../models/articles");
 
 exports.postComment = (req, res, next) => {
@@ -29,19 +31,42 @@ exports.postComment = (req, res, next) => {
     .catch(next);
 };
 
+// exports.sendCommentsByArticle = (req, res, next) => {
+//   const article_id = req.params.article_id;
+//   const queries = req.query;
+//   fetchCommentsByArticle(article_id, queries)
+//     .then(comments => {
+//       if (comments.length === 0)
+//         return Promise.reject({
+//           status: 404,
+//           msg: "Article or comments do not exist"
+//         });
+//       res.status(200).send({ comments });
+//     })
+//     .catch(next);
+// };
+
 exports.sendCommentsByArticle = (req, res, next) => {
-  const article_id = req.params.article_id;
-  const queries = req.query;
-  fetchCommentsByArticle(article_id, queries)
+  const { article_id } = req.params;
+  fetchCommentsByArticle(article_id, req.query)
     .then(comments => {
-      if (comments.length === 0)
+      const articleExists = article_id
+        ? checkExists(article_id, "articles", "article_id")
+        : null;
+      return Promise.all([articleExists, comments]);
+    })
+    .then(([articleExists, comments]) => {
+      console.log(articleExists);
+      if (articleExists === false)
         return Promise.reject({
           status: 404,
-          msg: "Article or comments do not exist"
+          msg: `Invalid article_id: ${article_id}`
         });
-      res.status(200).send({ comments });
+      else res.status(200).send({ comments });
     })
-    .catch(next);
+    .catch(err => {
+      next(err);
+    });
 };
 
 exports.incVotesForComment = (req, res, next) => {

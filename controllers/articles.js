@@ -13,6 +13,7 @@ exports.sendArticle = (req, res, next) => {
       if (article.length === 0) {
         return Promise.reject({ status: 404, msg: "article not found" });
       }
+      article = article[0];
       res.status(200).send({ article });
     })
     .catch(next);
@@ -28,6 +29,7 @@ exports.updateVotes = (req, res, next) => {
         return next({ status: 400, msg: "must use property 'inc_votes" });
       if (articleData.length === 0)
         return next({ status: 404, msg: "article not found" });
+      articleData = articleData[0];
       res.status(200).send({ articleData });
     })
     .catch(next);

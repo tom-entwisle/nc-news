@@ -5,17 +5,28 @@ const {
   deleteComment
 } = require("../models/comments");
 
+const { fetchArticleById } = require("../models/articles");
+
 exports.postComment = (req, res, next) => {
   const article_id = req.params.article_id;
   const userInput = req.body;
-  postCommentToArticle(article_id, userInput)
-    .then(comment => res.status(201).send({ comment }))
-    .catch(err => {
-      if (err)
-        return res
-          .status(400)
-          .send({ msg: "Body must contain keys username and body" });
-    });
+  fetchArticleById(article_id)
+    .then(articleData => {
+      if (articleData.length === 0)
+        return Promise.reject({
+          status: 404,
+          msg: "This article does not exist"
+        });
+      postCommentToArticle(article_id, userInput)
+        .then(([comment]) => res.status(201).send({ comment }))
+        .catch(err => {
+          if (err)
+            return res
+              .status(400)
+              .send({ msg: "Body must contain keys username and body" });
+        });
+    })
+    .catch(next);
 };
 
 exports.sendCommentsByArticle = (req, res, next) => {

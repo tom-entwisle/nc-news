@@ -7,7 +7,8 @@ const fetchArticleById = article_id => {
     .from("articles")
     .leftJoin("comments", "comments.article_id", "=", "articles.article_id")
     .groupBy("articles.article_id")
-    .where("articles.article_id", "=", article_id);
+    .where("articles.article_id", "=", article_id)
+    .returning("*");
 };
 
 const patchVotes = (article_id, votes) => {

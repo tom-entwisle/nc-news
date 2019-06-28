@@ -194,6 +194,16 @@ describe("/", () => {
           expect(res.ok).to.equal(true);
           let article = JSON.parse(res.text);
           expect(article).to.be.an("object");
+          expect(article.article).to.contain.keys([
+            "author",
+            "title",
+            "article_id",
+            "body",
+            "topic",
+            "created_at",
+            "votes",
+            "comment_count"
+          ]);
         });
     });
     it("PATCH status:200 and to send an object of the article with the now updated vote property", () => {
@@ -203,9 +213,8 @@ describe("/", () => {
         .expect(200)
         .then(res => {
           expect(res.ok).to.equal(true);
-          const testArticle = JSON.parse(res.text).articleData;
-          expect(testArticle).to.be.an("array");
-          expect(testArticle[0]).to.contain.keys([
+          expect(res.body.articleData).to.be.an("object");
+          expect(res.body.articleData).to.contain.keys([
             "author",
             "title",
             "article_id",
@@ -214,7 +223,7 @@ describe("/", () => {
             "created_at",
             "votes"
           ]);
-          expect(testArticle[0].votes).to.equal(50);
+          expect(res.body.articleData.votes).to.equal(50);
         });
     });
   });
@@ -301,9 +310,8 @@ describe("/", () => {
         .expect(201)
         .then(res => {
           expect(res.ok).to.equal(true);
-          const testComment = JSON.parse(res.text);
-          expect(testComment).to.be.an("object");
-          // console.log(testComment);
+          console.log(res.body);
+          expect(res.body).to.be.an("object");
         });
     });
     it("GET status:200 and to send an array of objects being the comments of the article passed in the params and accpets the queries sort by and order", () => {
